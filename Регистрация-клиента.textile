@@ -1,0 +1,35 @@
+*Метод*: POST
+*URI*: /api/client/mobile/1.0/registration/submit
+*Content-Type*: application/json; charset=utf-8
+*Body*: Объект SubmitRequest
+
+h3. SubmitRequest
+
+|_.Name|_.Type|_.Required|_.Description|
+|phone|string|true|Телефон клиента|
+|info|object ClientInfo|false|Информация о клиенте|
+
+h3. ClientInfo
+
+|_.Name|_.Type|_.Required|_.Description|
+|lastName|string|false|Фамилия|
+|firstName|string|false|Имя|
+|middleName|string|false|Отчество|
+|gender|number|false|Пол (0 - муж., 1 - жен.)|
+|birthDate|string|false|Дата рождения (формат "ISO 8601":https://ru.wikipedia.org/wiki/ISO_8601: YYYY-MM-DDThh:mm:ss±hh:mm)|
+
+----
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: Объект Submitted.
+
+h3. Submitted
+
+|_.Name|_.Type|_.Required|_.Description|
+|id|number|true|Временный идентификатор клиента|
+
+----
+
+Одновременно с ответом на телефон, указанный в запросе, отправляет смс с кодом подтвержения.
