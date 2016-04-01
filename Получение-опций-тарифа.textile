@@ -1,0 +1,14 @@
+*Метод*: GET
+*URI*: /api/client/mobile/1.0/tariff/options
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: Массив объектов TariffOption.
+
+h3. TariffOption
+
+|_.Name|_.Type|_.Required|_.Description|
+|id|number|true|ID опции|
+|name|string|true|Имя опции|
+|value|number|true|Значение опции|
