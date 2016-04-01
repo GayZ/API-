@@ -1,0 +1,18 @@
+*Метод*: GET
+*URI*: /api/client/mobile/1.0/registration/resubmit
+
+h3. URI parameters
+
+|_.Name|_.Type|_.Required|_.Description|
+|id|number|true|Идентификатор, полученный при регистрации клиента|
+
+----
+
+h2. Ответ
+
+Пустой.
+
+h3. Коды ошибок
+
+|_.Code|_.Description|
+|-10007|Невалидный идентификатор клиента|
