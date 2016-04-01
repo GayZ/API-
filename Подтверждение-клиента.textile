@@ -1,0 +1,27 @@
+*Метод*: GET
+*URI*: /api/client/mobile/1.0/registration/confirm
+
+h3. URI parameters
+
+|_.Name|_.Type|_.Required|_.Description|
+|id|number|true|Идентификатор, полученный при регистрации клиента|
+|code|string|true|Код подтверждения|
+
+----
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: Объект Confirmed.
+
+h3. Confirmed
+
+|_.Name|_.Type|_.Required|_.Description|
+|id|number|true|Постоянный идентификатор клиента|
+|key|string|true|Секретный ключ для подписи запросов|
+
+h3. Коды ошибок
+
+|_.Code|_.Description|
+|-10007|Невалидный идентификатор клиента|
+|-10008|Невалидный код подтверждения|
