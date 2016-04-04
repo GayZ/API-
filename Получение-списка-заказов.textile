@@ -12,24 +12,10 @@ h3. ShortOrderInfo
 
 |_.Name|_.Type|_.Required|_.Description|
 |state|number|true|Статус заказа|
-|assignee|object Assignee|false|Назначенный водитель|
+|route|array object [[Address|Поиск-адреса#address]]|true|Маршрут заказа|
 
 Статусы:
 1 - Создан
 2 - Назначен
 3 - По адресу
 4 - Выполняется
-
-h3. Assignee
-
-|_.Name|_.Type|_.Required|_.Description|
-|car|object Car|true|Автомобиль|
-|location|object "GeoJSON::Point":http://geojson.org/geojson-spec.html#point|false|Координаты|
-
-h3. Car
-
-|_.Name|_.Type|_.Required|_.Description|
-|brand|string|true|Брэнд|
-|model|string|true|Модель|
-|color|string|true|Цвет|
-|regNum|string|true|Регистрационный номер|
