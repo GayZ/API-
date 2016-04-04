@@ -1,0 +1,37 @@
+*Метод*: GET
+*URI*: /api/client/mobile/1.0/orders/{id}
+
+где {id} - идентификатор заказа.
+
+----
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: Объект OrderInfo.
+
+h3. OrderInfo
+
+|_.Name|_.Type|_.Required|_.Description|
+|state|number|true|Статус заказа|
+|assignee|object Assignee|false|Назначенный водитель|
+
+Статусы:
+1 - Создан
+2 - Назначен
+3 - По адресу
+4 - Выполняется
+
+h3. Assignee
+
+|_.Name|_.Type|_.Required|_.Description|
+|car|object Car|true|Автомобиль|
+|location|object "GeoJSON::Point":http://geojson.org/geojson-spec.html#point|false|Координаты|
+
+h3. Car
+
+|_.Name|_.Type|_.Required|_.Description|
+|brand|string|true|Брэнд|
+|model|string|true|Модель|
+|color|string|true|Цвет|
+|regNum|string|true|Регистрационный номер|
