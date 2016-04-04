@@ -1,0 +1,25 @@
+*Метод*: POST
+*URI*: /api/client/mobile/1.0/orders
+*Content-Type*: application/json; charset=utf-8
+*Body*: Объект CreateRequest
+
+h3. CreateRequest
+
+|_.Name|_.Type|_.Required|_.Description|
+|options|array number|true|Выбранные опции тарифа|
+|route|array [[Point|Поиск-адреса#point]]|true|Точки маршрута|
+|phone|string|true|Телефон для связи|
+|time|string|false|Время заказа (формат "ISO 8601":https://ru.wikipedia.org/wiki/ISO_8601: YYYY-MM-DDThh:mm:ss±hh:mm) (отсутствует, если на текущее)|
+|comment|string|false|Комментарий к заказу|
+
+----
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: Объект Created.
+
+h3. Created
+
+|_.Name|_.Type|_.Required|_.Description|
+|id|number|true|Идентификатор заказа|
