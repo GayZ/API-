@@ -1,0 +1,23 @@
+h1. HTTP/REST: Авторизация
+
+В настоящий момент основным методом авторизации REST запроса является механихм HMAC (hash based message authentication)
+
+h3. Авторизация с помощью HMAC
+
+Что такое HMAC Можно прочитать тут: http://restcookbook.com/Basics/loggingin/
+
+
+Основной алогритм, принятый для вычисления Message Digest'а - *SHA256*
+
+Для авторизации на сервере нужно будет передать кучку данных в Header'е HTTP запроса:
+* заголовок *Date* в формате *RFC-1123*
+* заголовок *Authentication* Следующего содержания: %{background:lightblue}hmac {identity}:{nonce}:{digest}%, где:
+** *identity* - Идентификатор пользователя, от имени которого делается запрос {login, номер телефона, что-то еще}. С помощью этого идентификатора система должна будет обнаружить ключь соответсвующий данному бользователю.
+** *nonce* - некоторое челое число, уникально идентифицирующее запрос на некотором дискретном временном промежутке (например 10 мин). Каждый новый запрос должен сопровождаться новый значением *nonce*
+** *digest* - Подпись сообщения вычисляемая как %{background:lightblue}base64encode(hmac("sha256", {secret}, {Request.method} + {Request.uri} + {Request.header.Date} + {nonce}))%. Тут *secret* - секретный ключь расшаренный между клиентом и сервисом. Для *POST* запроса вида *"http://192.168.100.22:7881/api/system/1.0/accounting/payments"* вычислить digest можно следующим образом: %{background:lightblue}base64encode(hmac("sha256", {secret}, "POST" + "/api/system/1.0/accounting/payments" + "2015-10-09T12:15:07.498+07:00" + "114696735"))%.
+
+Пример Header'ов необходим для подписи
+<pre>
+Date:2015-10-09T12:15:07.498+07:00
+Authentication:hmac system:114696735:7pi1GNhLzUSp5JVKFgkB0VZykud-fT3wJOVqiwDnKOE=
+</pre>
