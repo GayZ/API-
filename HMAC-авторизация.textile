@@ -1,5 +1,3 @@
-h1. HTTP/REST: Авторизация
-
 В настоящий момент основным методом авторизации REST запроса является механихм HMAC (hash based message authentication)
 
 h3. Авторизация с помощью HMAC
