@@ -14,6 +14,7 @@ h3. OrderInfo
 
 |_.Name|_.Type|_.Required|_.Description|
 |state|number|true|Статус заказа|
+|route|array object [[Address|Поиск-адреса#address]]|true|Маршрут заказа|
 |assignee|object Assignee|false|Назначенный водитель|
 
 Статусы:
