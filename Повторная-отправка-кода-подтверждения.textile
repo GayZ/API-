@@ -5,6 +5,7 @@ h3. URI parameters
 
 |_.Name|_.Type|_.Required|_.Description|
 |id|number|true|Идентификатор, полученный при регистрации клиента|
+|confirmationType|string|false|Как будет отправлен код подтверждения ("sms"/"voice", по-умолчанию - "sms")|
 
 ----
 
