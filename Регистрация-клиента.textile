@@ -6,6 +6,7 @@
 h3. SubmitRequest
 
 |_.Name|_.Type|_.Required|_.Description|
+|confirmationType|string|false|Как будет отправлен код подтверждения ("sms"/"voice", по-умолчанию - "sms")|
 |phone|string|true|Телефон клиента|
 |info|object ClientInfo|false|Информация о клиенте|
 
