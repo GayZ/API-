@@ -1,0 +1,21 @@
+*Метод*: GET
+*URI*: /api/client/mobile/1.0/context
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: Объект ContextData.
+
+h3. ContextData
+
+|_.Name|_.Type|_.Required|_.Description|
+|address|object [[Address|Поиск-адреса#address]]|true|Город, к которому привязана служба такси|
+|options|array object TariffOption|true|Список тарифных опций|
+
+h3. TariffOption
+
+|_.Name|_.Type|_.Required|_.Description|
+|id|number|true|ID опции|
+|name|string|true|Имя опции|
+|type|string|true|Тип значения (fixed/percent)|
+|value|number|true|Значение опции|
