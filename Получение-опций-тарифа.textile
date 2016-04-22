@@ -11,4 +11,5 @@ h3. TariffOption
 |_.Name|_.Type|_.Required|_.Description|
 |id|number|true|ID опции|
 |name|string|true|Имя опции|
+|type|string|true|Тип значения (fixed/percent)|
 |value|number|true|Значение опции|
