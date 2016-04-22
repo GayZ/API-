@@ -1,3 +1,7 @@
+h1. **DEPRECATED**
+
+h2. Используйте [[Получение контекста API]].
+
 *Метод*: GET
 *URI*: /api/client/mobile/1.0/tariff/options
 
