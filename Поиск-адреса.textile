@@ -28,6 +28,7 @@ h3. Address
 |_.Name|_.Type|_.Required|_.Description|
 |level|array [[AddressLevel|Поиск-адреса#AddressLevel]]|true|Адрес и его родители (в порядке от потомка к родителю)|
 |priority|number|false|Приоритет|
+|center|object "GeoJSON::Point":http://geojson.org/geojson-spec.html#point|false|Координаты центра поселения|
 |point|object [[Point|Поиск-адреса#Point]] |false|Адресная точка с координатами|
 
 h3. AddressLevel
