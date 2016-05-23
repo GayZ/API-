@@ -46,13 +46,17 @@ import java.util.Map;
 
 
 /**
- * Naive implementation of HMAC Signer
+ * Naive implementation of HMAC Signer.
+ * Beware!: It is not thread safe!!!
  */
 public class NaiveHmacSigner {
+
+
 
     private final Mac mac;
     private final String username;
     private final SecureRandom rnd = new SecureRandom();
+
 
     public NaiveHmacSigner(String username, Mac mac) {
         this.mac = mac;
@@ -62,7 +66,8 @@ public class NaiveHmacSigner {
     static final Charset UTF8 = Charset.forName("UTF-8");
     static final DateTimeFormatter DATEFORMAT = DateTimeFormatter.RFC_1123_DATE_TIME;
 
-    public synchronized Map<String, String> newSignature(String method, String uri) {
+
+    public Map<String, String> newSignature(String method, String uri) {
 
         final String dateHeaderValue = OffsetDateTime.now().format(DATEFORMAT);
         final String nonce = "" + Math.abs(this.rnd.nextInt());
