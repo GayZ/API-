@@ -25,3 +25,71 @@ Authentication:hmac system:114696735:7pi1GNhLzUSp5JVKFgkB0VZykud-fT3wJOVqiwDnKOE
 ----
 
 В данном API *identity* и *secret* получаются в ходе [[регистрации|Подтверждение-клиента#confirmed]].
+
+----
+
+Пример формирования заголовков *Date* и *Authentication* на Java
+
+```java
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.Charset;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
+
+/*
+ * Naive implementation of HMAC Signer
+ */
+public class NaiveHmacSigner {
+
+    private static final Charset UTF8CHARSET = Charset.forName("UTF-8");
+
+    private final Mac mac;
+    private final String username;
+    private final SecureRandom rnd = new SecureRandom();
+
+
+    public NaiveHmacSigner(String username, Mac mac) {
+        this.mac = mac;
+        this.username = username;
+    }
+
+
+    public synchronized Map<String, String> newSignatureHeaders(final String method, final String uri) {
+
+        final String dateHeaderValue = OffsetDateTime.now().format(DateTimeFormatter.RFC_1123_DATE_TIME);
+        final String nonce = "" + Math.abs(this.rnd.nextInt());
+        final String signatureData = method + uri + dateHeaderValue + nonce;
+
+        this.mac.reset();
+        final byte[] signatureBytes = this.mac.doFinal(signatureData.getBytes(UTF8CHARSET));
+        final String signatureBase64 = Base64.getEncoder().encodeToString(signatureBytes);
+        final String authHeaderValue = String.format("hmac %s:%s:%s", this.username, nonce, signatureBase64);
+
+        final Map<String, String> result = new HashMap<>();
+        result.put("Date", dateHeaderValue);
+        result.put("Authentication", authHeaderValue);
+        return result;
+    }
+
+
+    private static final  String HMAC_SHA256_KEYSPEC = "HmacSHA256";
+
+
+    public static NaiveHmacSigner newSigner(final String username, final byte[] secret)
+            throws NoSuchAlgorithmException, InvalidKeyException {
+
+        final Mac mac = Mac.getInstance(HMAC_SHA256_KEYSPEC);
+        final SecretKeySpec spec = new SecretKeySpec(secret, HMAC_SHA256_KEYSPEC);
+        mac.init(spec);
+        return new NaiveHmacSigner(username, mac);
+    }
+}
+```
