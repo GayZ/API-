@@ -38,7 +38,7 @@ digest = base64encodeToString(digest_bytes);
  Для *POST* запроса вида *"http://localhost:8080/api/client/mobile/1.0/orders"* вычислить *digest* можно следующим образом: 
 ```
 base64encodeToString(
-  sha256({secret} + 
+  sha256(${secret} + 
     utf8bytes(
       "POST" + 
       "/api/client/mobile/1.0/orders" + 
