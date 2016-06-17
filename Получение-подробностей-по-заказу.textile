@@ -16,12 +16,19 @@ h3. OrderInfo
 |state|number|true|Статус заказа|
 |route|array object [[Address|Поиск-адреса#address]]|true|Маршрут заказа|
 |assignee|object Assignee|false|Назначенный водитель|
+|options|array number|true|Выбранные тарифные опции|
+|time|string|false|Время заказа (формат "ISO 8601":https://ru.wikipedia.org/wiki/ISO_8601: YYYY-MM-DDThh:mm:ss±hh:mm) (отсутствует, если на текущее)|
+|comment|string|false|Комментарий|
+|distance|number|false|Расстояние|
+|cost|number|false|Стоимость|
 
 Статусы:
 1 - Создан
 2 - Назначен
 3 - По адресу
 4 - Выполняется
+5 - Завершен
+6 - Отменен
 
 h3. Assignee
 
