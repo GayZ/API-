@@ -11,6 +11,7 @@ h2. Ответ
 h3. ShortOrderInfo
 
 |_.Name|_.Type|_.Required|_.Description|
+|id|number|true|Идентификатор заказа|
 |state|number|true|Статус заказа|
 |route|array object [[Address|Поиск-адреса#address]]|true|Маршрут заказа|
 
@@ -19,3 +20,5 @@ h3. ShortOrderInfo
 2 - Назначен
 3 - По адресу
 4 - Выполняется
+5 - Завершен
+6 - Отменен
