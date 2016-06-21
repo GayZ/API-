@@ -54,7 +54,7 @@ h3. Point
 |_.Name|_.Type|_.Required|_.Description|
 |id|number|true|ID адресной точки|
 |info|object [[PointInfo|Поиск-адреса#PointInfo]]|true|Опциональные информационные данные по точке|
-|coordinates|object "GeoJSON::Point":http://geojson.org/geojson-spec.html#point|false|Координаты|
+|coordinates|object [[PointInfo|Поиск-адреса#Location]]|false|Координаты|
 
 h3. PointInfo
 
@@ -66,6 +66,12 @@ h3. PointInfo
 |lit|string|false|Литера|
 |porch|string|false|Подъезд|
 |flat|string|false|Квартира|
+
+h3. Location
+
+|_.Name|_.Type|_.Required|_.Description|
+|lon|number|true|Долгота|
+|lat|number|true|Широта|
 
 h2. Пример
 
