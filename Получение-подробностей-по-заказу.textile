@@ -21,6 +21,7 @@ h3. OrderInfo
 |comment|string|false|Комментарий|
 |distance|number|false|Расстояние|
 |cost|number|false|Стоимость|
+|executionTime|string|false|Продолжительность поездки (формат "ISO 8601":https://ru.wikipedia.org/wiki/ISO_8601). Только для статуса 4|
 
 Статусы:
 1 - Создан
