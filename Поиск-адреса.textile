@@ -54,7 +54,7 @@ h3. Point
 |_.Name|_.Type|_.Required|_.Description|
 |id|number|true|ID адресной точки|
 |info|object [[PointInfo|Поиск-адреса#PointInfo]]|true|Опциональные информационные данные по точке|
-|coordinates|object [[PointInfo|Поиск-адреса#Location]]|false|Координаты|
+|coordinates|object [[Location|Поиск-адреса#Location]]|false|Координаты|
 
 h3. PointInfo
 
