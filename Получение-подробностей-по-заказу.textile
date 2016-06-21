@@ -34,7 +34,7 @@ h3. Assignee
 
 |_.Name|_.Type|_.Required|_.Description|
 |car|object Car|true|Автомобиль|
-|location|object "GeoJSON::Point":http://geojson.org/geojson-spec.html#point|false|Координаты|
+|location|object [[Location|Поиск-адреса#Location]]|false|Координаты|
 
 h3. Car
 
