@@ -34,7 +34,7 @@ h3. Address
 h3. AddressLevel
 
 |_.Name|_.Type|_.Required|_.Description|
-|id|number|true|ID адресного объекта|
+|id|number|false|ID адресного объекта|
 |type|number|true|Тип адресного объекта|
 |name|string|true|Имя адресного объекта|
 |prefix|string|true|Префикс имени адресного объекта|
@@ -52,7 +52,7 @@ h3. AddressLevel
 h3. Point
 
 |_.Name|_.Type|_.Required|_.Description|
-|id|number|true|ID адресной точки|
+|id|number|false|ID адресной точки|
 |info|object [[PointInfo|Поиск-адреса#PointInfo]]|true|Опциональные информационные данные по точке|
 |coordinates|object [[Location|Поиск-адреса#Location]]|false|Координаты|
 
