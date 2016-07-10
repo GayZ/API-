@@ -37,7 +37,7 @@ h3. AddressLevel
 |id|number|false|ID адресного объекта|
 |type|number|true|Тип адресного объекта|
 |name|string|true|Имя адресного объекта|
-|prefix|string|true|Префикс имени адресного объекта|
+|prefix|string|false|Префикс имени адресного объекта|
 
 Типы:
 0 - Страна
