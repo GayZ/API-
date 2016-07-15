@@ -1,0 +1,22 @@
+*Метод*: GET
+*URI*: /api/client/mobile/1.0/history
+
+----
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: Массив объектов ShortOrderInfo.
+
+h3. ShortOrderInfo
+
+|_.Name|_.Type|_.Required|_.Description|
+|id|number|true|Идентификатор заказа|
+|state|number|true|Статус заказа|
+|route|array object [[Address|Поиск-адреса#address]]|true|Маршрут заказа|
+
+Статусы:
+1 - Создан
+2 - Назначен
+3 - По адресу
+4 - Выполняется
