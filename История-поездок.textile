@@ -1,18 +1,19 @@
 *Метод*: GET
 *URI*: /api/client/mobile/1.0/history
-
 ----
 
 h3. Параметры GET запроса
 
 |_.Name|_.Type|_.Required|_.Description|
-|offset|number|false|Смещение в истории (количество поездок)|
-|length|number|false|Максимальный размер ответа (количества поездок), это число не может быть больше 16|
+|offset|number|false|Смещение в истории (количество поездок), если не указано - 0|
+|length|number|false|Максимальный размер ответа (количества поездок), это положительное число не может быть больше 16. Если не указано - 8|
 
 h2. Ответ
 
 *Content-Type*: application/json; charset=utf-8
 *Body*: Массив объектов ShortOrderInfo.
+
+Объекты будут отсортированы в обратном хронологическом порядке.
 
 h3. ShortOrderInfo
 
