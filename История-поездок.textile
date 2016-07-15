@@ -3,6 +3,12 @@
 
 ----
 
+h3. Параметры GET запроса
+
+|_.Name|_.Type|_.Required|_.Description|
+|offset|number|false|Смещение в истории (количество поездок)|
+|length|number|false|Максимальный размер ответа (количества поездок), это число не может быть больше 16|
+
 h2. Ответ
 
 *Content-Type*: application/json; charset=utf-8
