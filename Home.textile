@@ -25,20 +25,20 @@ h3. Вызовы, не требующие авторизации
 |GET|/api/client/mobile/1.0/context|**experimental**|[[link|Получение контекста API]]|1.19|
 |POST|/api/client/mobile/1.0/registration/submit|**experimental**|[[link|Регистрация клиента]]|1.19|
 |GET|/api/client/mobile/1.0/registration/resubmit|**experimental**|[[link|Повторная отправка кода подтверждения]]|1.19|
-|GET|/api/client/mobile/1.0/registration/confirm|**experimental**|[[link|Подтверждение клиента]]|1.19|
-|GET|/api/client/mobile/1.0/address/address|**experimental**|[[link|Поиск адреса]]|1.19|
-|GET|/api/client/mobile/1.0/address/point|**experimental**|[[link|Поиск адресной точки]]|1.19|
-|GET|/api/client/mobile/1.0/address/nearest|**experimental**|[[link|Поиск адреса по координатам]]|1.19|
+|GET|/api/client/mobile/1.0/registration/confirm|**unstable**|[[link|Подтверждение клиента]]|1.19|
+|GET|/api/client/mobile/1.0/address/address|**unstable**|[[link|Поиск адреса]]|1.19|
+|GET|/api/client/mobile/1.0/address/point|**unstable**|[[link|Поиск адресной точки]]|1.19|
+|GET|/api/client/mobile/1.0/address/nearest|**unstable**|[[link|Поиск адреса по координатам]]|1.19|
 |GET|/api/client/mobile/1.0/tariff/options|**deprecated**|[[link|Получение опций тарифа]]|1.19|
-|POST|/api/client/mobile/1.0/order/estimate|**experimental**|[[link|Предварительная оценка заказа]]|1.19|
+|POST|/api/client/mobile/1.0/order/estimate|**unstable**|[[link|Предварительная оценка заказа]]|1.19|
 
 h3. Требуется [[авторизация|HMAC авторизация]]
 
 |_.Method|_.URI|_.Status|_.Page Link|_.Since|
-|POST|/api/client/mobile/1.0/orders|**experimental**|[[link|Создание заказа]]|1.19|
-|GET|/api/client/mobile/1.0/orders|**experimental**|[[link|Получение списка заказов]]|1.19|
-|GET|/api/client/mobile/1.0/orders/{id}|**experimental**|[[link|Получение подробностей по заказу]]|1.19|
-|DELETE|/api/client/mobile/1.0/orders/{id}|**experimental**|[[link|Отмена заказа]]|1.19|
+|POST|/api/client/mobile/1.0/orders|**unstable**|[[link|Создание заказа]]|1.19|
+|GET|/api/client/mobile/1.0/orders|**unstable**|[[link|Получение списка заказов]]|1.19|
+|GET|/api/client/mobile/1.0/orders/{id}|**unstable**|[[link|Получение подробностей по заказу]]|1.19|
+|DELETE|/api/client/mobile/1.0/orders/{id}|**unstable**|[[link|Отмена заказа]]|1.19|
 
 На страницах с детальным описанием запросов могут присутствовать дополнительные замечания по доступности функционала в зависимости от версии системы.
 
