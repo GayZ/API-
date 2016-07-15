@@ -9,7 +9,7 @@ h2. Статус API
 Система активно разрабатывается как и API, которые она предоставляет. Для каждого элемента API определен его статус, определяющий степень его стабильности/готовности для использования:
 
  * **experimental** - Экспериментальный. Еще не достаточно хорошо протестированы, велика вероятность каких-либо изменений в форматах запросов/ответов, также возможно изъятие функции из API;
- * **unstable** - API протестирован командой разработки, возможны мелкие изменения в форматах запросов (с большой вероятностью без потери обратной совместимости при переходе от experimental к unstable);
+ * **candidat** - API протестирован командой разработки, возможны мелкие изменения в форматах запросов (с большой вероятностью без потери обратной совместимости при переходе от experimental к unstable);
  * **stable** - API зафиксирован. Изменения могут быть внесены только при условии сохранения обратной совместимости. Если сохранение обратной совместимости невозможно, будет разработана новая версия интерфейсного вызова.
  * **deprecated** - Запрещенный. Скоро будет удален.
 
@@ -22,23 +22,23 @@ h2. HTTP API v1.xx
 h3. Вызовы, не требующие авторизации
 
 |_.Method|_.URI|_.Status|_.Page Link|_.Since|
-|GET|/api/client/mobile/1.0/context|**unstable**|[[link|Получение контекста API]]|1.19|
-|POST|/api/client/mobile/1.0/registration/submit|**unstable**|[[link|Регистрация клиента]]|1.19|
-|GET|/api/client/mobile/1.0/registration/resubmit|**unstable**|[[link|Повторная отправка кода подтверждения]]|1.19|
-|GET|/api/client/mobile/1.0/registration/confirm|**unstable**|[[link|Подтверждение клиента]]|1.19|
-|GET|/api/client/mobile/1.0/address/address|**unstable**|[[link|Поиск адреса]]|1.19|
-|GET|/api/client/mobile/1.0/address/point|**unstable**|[[link|Поиск адресной точки]]|1.19|
-|GET|/api/client/mobile/1.0/address/nearest|**unstable**|[[link|Поиск адреса по координатам]]|1.19|
+|GET|/api/client/mobile/1.0/context|**candidat**|[[link|Получение контекста API]]|1.19|
+|POST|/api/client/mobile/1.0/registration/submit|**candidat**|[[link|Регистрация клиента]]|1.19|
+|GET|/api/client/mobile/1.0/registration/resubmit|**candidat**|[[link|Повторная отправка кода подтверждения]]|1.19|
+|GET|/api/client/mobile/1.0/registration/confirm|**candidat**|[[link|Подтверждение клиента]]|1.19|
+|GET|/api/client/mobile/1.0/address/address|**candidat**|[[link|Поиск адреса]]|1.19|
+|GET|/api/client/mobile/1.0/address/point|**candidat**|[[link|Поиск адресной точки]]|1.19|
+|GET|/api/client/mobile/1.0/address/nearest|**candidat**|[[link|Поиск адреса по координатам]]|1.19|
 |GET|/api/client/mobile/1.0/tariff/options|**deprecated**|[[link|Получение опций тарифа]]|1.19|
-|POST|/api/client/mobile/1.0/order/estimate|**unstable**|[[link|Предварительная оценка заказа]]|1.19|
+|POST|/api/client/mobile/1.0/order/estimate|**candidat**|[[link|Предварительная оценка заказа]]|1.19|
 
 h3. Требуется [[авторизация|HMAC авторизация]]
 
 |_.Method|_.URI|_.Status|_.Page Link|_.Since|
-|POST|/api/client/mobile/1.0/orders|**unstable**|[[link|Создание заказа]]|1.19|
-|GET|/api/client/mobile/1.0/orders|**unstable**|[[link|Получение списка заказов]]|1.19|
-|GET|/api/client/mobile/1.0/orders/{id}|**unstable**|[[link|Получение подробностей по заказу]]|1.19|
-|DELETE|/api/client/mobile/1.0/orders/{id}|**unstable**|[[link|Отмена заказа]]|1.19|
+|POST|/api/client/mobile/1.0/orders|**candidat**|[[link|Создание заказа]]|1.19|
+|GET|/api/client/mobile/1.0/orders|**candidat**|[[link|Получение списка заказов]]|1.19|
+|GET|/api/client/mobile/1.0/orders/{id}|**candidat**|[[link|Получение подробностей по заказу]]|1.19|
+|DELETE|/api/client/mobile/1.0/orders/{id}|**candidat**|[[link|Отмена заказа]]|1.19|
 
 На страницах с детальным описанием запросов могут присутствовать дополнительные замечания по доступности функционала в зависимости от версии системы.
 
