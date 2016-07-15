@@ -22,7 +22,7 @@ h2. HTTP API v1.xx
 h3. Вызовы, не требующие авторизации
 
 |_.Method|_.URI|_.Status|_.Page Link|_.Since|
-|GET|/api/client/mobile/1.0/context|**experimental**|[[link|Получение контекста API]]|1.19|
+|GET|/api/client/mobile/1.0/context|**unstable**|[[link|Получение контекста API]]|1.19|
 |POST|/api/client/mobile/1.0/registration/submit|**unstable**|[[link|Регистрация клиента]]|1.19|
 |GET|/api/client/mobile/1.0/registration/resubmit|**unstable**|[[link|Повторная отправка кода подтверждения]]|1.19|
 |GET|/api/client/mobile/1.0/registration/confirm|**unstable**|[[link|Подтверждение клиента]]|1.19|
