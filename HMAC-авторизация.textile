@@ -139,7 +139,7 @@ def now_rfc_1123():
             date.hour, date.minute, date.second)
 
 
-class Credentials:
+class NaiveHmacSigner:
 
     def __init__(self, permanent_id, key):
 
@@ -173,7 +173,7 @@ class Credentials:
         }
 
 
-c = Credentials(12312313, 'beKXDqRvkrbz+aQpEgn41SSh+9qtLAsb0r2cbcQ24cM=')
+c = NaiveHmacSigner(12312313, 'beKXDqRvkrbz+aQpEgn41SSh+9qtLAsb0r2cbcQ24cM=')
 print(c.sign_query('GET', '/api/client/mobile/1.0/history'))
 
 ```
