@@ -35,7 +35,7 @@ h3. Вызовы, не требующие авторизации
 h3. Требуется [[авторизация|HMAC авторизация]]
 
 |_.Method|_.URI|_.Status|_.Page Link|_.Since|
-|POST|/api/client/mobile/1.0/orders|**candidat**|[[link|Создание заказа]]|1.19|
+|POST|/api/client/mobile/2.0/orders|**candidat**|[[link|Создание заказа]]|1.19|
 |GET|/api/client/mobile/1.0/orders|**candidat**|[[link|Получение списка заказов]]|1.19|
 |GET|/api/client/mobile/1.0/orders/{id}|**candidat**|[[link|Получение подробностей по заказу]]|1.19|
 |DELETE|/api/client/mobile/1.0/orders/{id}|**candidat**|[[link|Отмена заказа]]|1.19|
