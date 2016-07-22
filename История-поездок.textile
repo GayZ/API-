@@ -23,5 +23,5 @@ h3. ShortOrderInfo
 |route|array object [[Address|Поиск-адреса#address]]|true|Маршрут заказа|
 
 Статусы:
-5 - успешно заверщен
+5 - успешно завершен
 6 - отменен
