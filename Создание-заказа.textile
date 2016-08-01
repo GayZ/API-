@@ -13,6 +13,8 @@ h3. CreateRequest
 |comment|string|false|Комментарий к заказу|
 
 ----
+h2. Пример запроса 1. Точка на карте 
+@{"options":[],"route":[{"coordinates":{"lat":55.044598,"lon":73.422668},"id":1000000080888,"info":{"house":"41/1"}},{"coordinates":{"lat":55.0524572270224,"lon":73.43110375106335},"info":{"alias":"Точка на карте"}}]}@
 
 h2. Ответ
 
