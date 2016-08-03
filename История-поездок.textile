@@ -1,5 +1,6 @@
 *Метод*: GET
 *URI*: /api/client/mobile/1.0/history
+
 ----
 
 h3. Параметры GET запроса
