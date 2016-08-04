@@ -64,8 +64,9 @@ h3. PointInfo
 |housing|string|false|Номер корпуса дома|
 |building|string|false|Номер строения|
 |lit|string|false|Литера|
-|porch|string|false|Подъезд|
-|flat|string|false|Квартира|
+|porch|string|false|Подъезд (для первого адреса при создании заказа)|
+|flat|string|false|Квартира (для первого адреса при создании заказа)|
+|comment|string|false|Комментарий (для первого адреса при создании заказа)|
 
 h3. Location
 
