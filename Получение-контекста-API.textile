@@ -15,8 +15,8 @@ h3. ContextData
 h3. Address
 
 |_.Name|_.Type|_.Required|_.Description|
-|level|array [[AddressLevel|Поиск-адреса#AddressLevel]]|true|Адрес и его родители (в порядке от потомка к родителю)|
-|center|object [[Location|Поиск-адреса#Location]]|false|Координаты центра поселения|
+|level|array AddressLevel|true|Адрес и его родители (в порядке от потомка к родителю)|
+|center|object Location|false|Координаты центра поселения|
 
 h3. AddressLevel
 
