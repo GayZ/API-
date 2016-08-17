@@ -36,6 +36,12 @@ h3. AddressLevel
 6 - Населенный пункт
 7 - Улица
 
+h3. Location
+
+|_.Name|_.Type|_.Required|_.Description|
+|lon|number|true|Долгота|
+|lat|number|true|Широта|
+
 h3. TariffOption
 
 |_.Name|_.Type|_.Required|_.Description|
