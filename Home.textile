@@ -11,7 +11,6 @@ h2. Статус API
  * **experimental** - Экспериментальный. Еще не достаточно хорошо протестированы, велика вероятность каких-либо изменений в форматах запросов/ответов, также возможно изъятие функции из API;
  * **candidat** - API протестирован командой разработки, возможны мелкие изменения в форматах запросов (с большой вероятностью без потери обратной совместимости при переходе от experimental к unstable);
  * **stable** - API зафиксирован. Изменения могут быть внесены только при условии сохранения обратной совместимости. Если сохранение обратной совместимости невозможно, будет разработана новая версия интерфейсного вызова.
- * **deprecated** - Запрещенный. Скоро будет удален.
 
 API в рамках одной major версии может быть только расширен (расширение интерфейса старых запросов, добавление новых).
 
@@ -22,14 +21,13 @@ h2. HTTP API v1.xx
 h3. Вызовы, не требующие авторизации
 
 |_.Method|_.URI|_.Status|_.Page Link|_.Since|
-|GET|/api/client/mobile/1.0/context|**candidat**|[[link|Получение контекста API]]|1.19|
+|GET|/api/client/mobile/1.1/context|**candidat**|[[link|Получение контекста API]]|1.19|
 |POST|/api/client/mobile/1.0/registration/submit|**candidat**|[[link|Регистрация клиента]]|1.19|
 |GET|/api/client/mobile/1.0/registration/resubmit|**candidat**|[[link|Повторная отправка кода подтверждения]]|1.19|
 |GET|/api/client/mobile/1.0/registration/confirm|**candidat**|[[link|Подтверждение клиента]]|1.19|
 |GET|/api/client/mobile/1.0/address/address|**candidat**|[[link|Поиск адреса]]|1.19|
 |GET|/api/client/mobile/1.0/address/point|**candidat**|[[link|Поиск адресной точки]]|1.19|
 |GET|/api/client/mobile/1.0/address/nearest|**candidat**|[[link|Поиск адреса по координатам]]|1.19|
-|GET|/api/client/mobile/1.0/tariff/options|**deprecated**|[[link|Получение опций тарифа]]|1.19|
 |POST|/api/client/mobile/1.0/order/estimate|**candidat**|[[link|Предварительная оценка заказа]]|1.19|
 
 h3. Требуется [[авторизация|HMAC авторизация]]
