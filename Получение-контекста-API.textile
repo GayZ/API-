@@ -1,5 +1,5 @@
 *Метод*: GET
-*URI*: /api/client/mobile/1.0/context
+*URI*: /api/client/mobile/1.1/context
 
 h2. Ответ
 
@@ -9,8 +9,32 @@ h2. Ответ
 h3. ContextData
 
 |_.Name|_.Type|_.Required|_.Description|
-|address|object [[Address|Поиск-адреса#address]]|true|Город, к которому привязана служба такси|
+|address|object Address|true|Город, к которому привязана служба такси|
 |options|array object TariffOption|true|Список тарифных опций|
+
+h3. Address
+
+|_.Name|_.Type|_.Required|_.Description|
+|level|array [[AddressLevel|Поиск-адреса#AddressLevel]]|true|Адрес и его родители (в порядке от потомка к родителю)|
+|center|object [[Location|Поиск-адреса#Location]]|false|Координаты центра поселения|
+
+h3. AddressLevel
+
+|_.Name|_.Type|_.Required|_.Description|
+|id|number|false|ID адресного объекта|
+|type|number|true|Тип адресного объекта|
+|name|string|true|Имя адресного объекта|
+|prefix|string|false|Префикс имени адресного объекта|
+
+Типы:
+0 - Страна
+1 - Регион
+2 - Автономный округ
+3 - Область
+4 - Город
+5 - Район города
+6 - Населенный пункт
+7 - Улица
 
 h3. TariffOption
 
