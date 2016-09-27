@@ -19,7 +19,7 @@ h3. ShortOrderInfo
 |_.Name|_.Type|_.Required|_.Description|
 |id|number|true|Идентификатор заказа|
 |state|number|true|Статус заказа|
-|route|array object [[Address|Адресные-объекты#address]]|true|Маршрут заказа|
+|route|array [[Address|Адресные-объекты#address]]|true|Маршрут заказа|
 
 Статусы:
 @1@ - Создан
