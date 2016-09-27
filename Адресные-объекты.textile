@@ -43,7 +43,7 @@ h2. PointInfo
 |flat|string|false|Квартира (для первого адреса при создании заказа)|
 |comment|string|false|Комментарий (для первого адреса при создании заказа)|
 
-h3. Location
+h2. Location
 
 |_.Name|_.Type|_.Required|_.Description|
 |lon|number|true|Долгота|
