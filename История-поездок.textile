@@ -1,3 +1,9 @@
+Для выполнения данного запроса, пользователь должен быть [[авторизован|HMAC-авторизация]].
+
+----
+
+h2. Запрос
+
 *Метод*: GET
 *URI*: /api/client/mobile/1.0/history
 
@@ -20,9 +26,10 @@ h3. ShortOrderInfo
 
 |_.Name|_.Type|_.Required|_.Description|
 |id|number|true|Идентификатор заказа|
-|state|number|true|Статус заказа|
+|state|number OrderState|true|Статус заказа|
 |route|array object [[Address|Поиск-адреса#address]]|true|Маршрут заказа|
 
-Статусы:
-5 - успешно завершен
-6 - отменен
+h3. OrderState
+
+@5@ - успешно завершен
+@6@ - отменен
