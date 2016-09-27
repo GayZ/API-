@@ -1,0 +1,5 @@
+Все форматы соответствуют стандарту "ISO 8601":https://ru.wikipedia.org/wiki/ISO_8601.
+
+h3. OffsetDateTime
+
+@YYYY-MM-DDThh:mm:ss±hh:mm@
