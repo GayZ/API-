@@ -1,0 +1,36 @@
+h2. Запрос
+
+*Метод*: GET
+*URI*: /api/client/mobile/1.0/tariffs
+
+h3. Заголовки запроса
+
+|_.Name|_.Type|_.Required|_.Description|
+|Hive-Profile|string|true|Идентификатор профиля мобильного приложения|
+
+----
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: Массив объектов Tariff.
+
+h3. Tariff
+
+|_.Name|_.Type|_.Required|_.Description|
+|name|string|true|Наименование тарифа|
+|address|object [[Address|Адресные-объекты#Address]]|true|Населенный пункт, к которому привязан тариф|
+|options|array [[Option|Получение-списка-тарифов#Option]]|true|Список опций|
+
+h3. Option
+
+|_.Name|_.Type|_.Required|_.Description|
+|id|number|true|ID опции|
+|name|string|true|Имя опции|
+|type|string [[OptionValueType|Получение-списка-тарифов#OptionValueType]]|true|Тип стоимости|
+|value|number|true|Стоимость опции|
+
+h3. OptionValueType
+
+fixed - Фиксированная стоимость
+percent - Процент от стоимости заказа
