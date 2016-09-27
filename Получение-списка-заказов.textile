@@ -18,10 +18,11 @@ h3. ShortOrderInfo
 
 |_.Name|_.Type|_.Required|_.Description|
 |id|number|true|Идентификатор заказа|
-|state|number|true|Статус заказа|
+|state|number [[OrderState|Получение-списка-заказов#orderstate]]|true|Статус заказа|
 |route|array [[Address|Адресные-объекты#address]]|true|Маршрут заказа|
 
-Статусы:
+h3. OrderState
+
 @1@ - Создан
 @2@ - Назначен
 @3@ - По адресу
