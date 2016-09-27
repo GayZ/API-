@@ -1,3 +1,5 @@
+h2. Запрос
+
 *Метод*: POST
 *URI*: /api/client/mobile/1.0/order/estimate
 *Content-Type*: application/json; charset=utf-8
@@ -6,8 +8,9 @@
 h3. EstimateRequest
 
 |_.Name|_.Type|_.Required|_.Description|
+|tariff|string|true|Наименование тарифа|
 |options|array number|true|Выбранные опции тарифа|
-|route|array [[Point|Поиск-адреса#point]]|true|Точки маршрута с координатами|
+|route|array [[Location|Адресные-объекты#location]]|true|Точки маршрута|
 
 ----
 
@@ -20,6 +23,7 @@ h3. Estimation
 
 |_.Name|_.Type|_.Required|_.Description|
 |total|number|true|Стоимость|
+|path|array [[Path|Предварительная-оценка-заказа#path]]|false|Полный путь по заказу|
 
 h3. Path
 
