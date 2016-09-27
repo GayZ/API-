@@ -3,7 +3,7 @@ h2. Запрос
 *Метод*: GET
 *URI*: /api/client/mobile/1.0/tariffs
 
-h3. Заголовки запроса
+h3. Заголовки
 
 |_.Name|_.Type|_.Required|_.Description|
 |Hive-Profile|string|true|Идентификатор профиля мобильного приложения|
