@@ -1,18 +1,34 @@
+h2. Запрос
+
 *Метод*: POST
-*URI*: /api/client/mobile/2.0/orders
+*URI*: /api/client/mobile/2.1/orders
 *Content-Type*: application/json; charset=utf-8
 *Body*: Объект CreateRequest
 
 h3. CreateRequest
 
 |_.Name|_.Type|_.Required|_.Description|
+|tariff|string|true|Наименование тарифа|
 |options|array number|true|Выбранные опции тарифа|
-|route|array [[Address|Поиск-адреса#address]]|true|Маршрут|
+|route|array [[Address|Адресные-объекты#address]]|true|Маршрут|
 |phone|string|true|Телефон для связи|
-|time|string|false|Время заказа (формат "ISO 8601":https://ru.wikipedia.org/wiki/ISO_8601: YYYY-MM-DDThh:mm:ss±hh:mm) (отсутствует, если на текущее)|
+|time|string [[OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]]|false|Время заказа (отсутствует, если на текущее)|
 |comment|string|false|Комментарий к заказу|
 
 ----
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: Объект Created.
+
+h3. Created
+
+|_.Name|_.Type|_.Required|_.Description|
+|id|number|true|Идентификатор заказа|
+
+----
+
 h2. Примеры запроса
 
 h3. 1. Адрес, полученный от сервера HiveTaxi
@@ -118,13 +134,3 @@ h3. 3. Адрес, полученный от сервера Google API
   "phone": "+79123456789"
 }
 </code></pre>
-
-h2. Ответ
-
-*Content-Type*: application/json; charset=utf-8
-*Body*: Объект Created.
-
-h3. Created
-
-|_.Name|_.Type|_.Required|_.Description|
-|id|number|true|Идентификатор заказа|
