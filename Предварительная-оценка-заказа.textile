@@ -1,7 +1,7 @@
 h2. Запрос
 
 *Метод*: POST
-*URI*: /api/client/mobile/1.0/order/estimate
+*URI*: /api/client/mobile/1.0/estimate
 *Content-Type*: application/json; charset=utf-8
 *Body*: Объект EstimateRequest
 
