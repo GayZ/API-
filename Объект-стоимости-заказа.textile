@@ -1,0 +1,17 @@
+h3. Cost
+
+|_.Name|_.Type|_.Required|_.Description|
+|type|string [[CostType|Объект-стоимости-заказа#costtype]]|true|Тип стоимости|
+|amount|number|true|Стоимость|
+|calculation|string [[CalculationType|Объект-стоимости-заказа#calculationtype]]|true|Тип рассчета|
+
+h3. CostType
+
+@total@ - Фиксированная стоимость
+@approximate@ - Приблизительная стоимость
+@minimum@ - Минимальная стоимость
+
+h3. CalculationType
+
+@fixed@ - Стоимость в пути не меняется
+@taximeter@ - Стоимость зависит от показаний таксометра
