@@ -16,7 +16,7 @@ h3. Параметры GET запроса
 
 ----
 
-h2. Формат ответа
+h2. Ответ
 
 *Content-Type*: application/json; charset=utf-8
 *Body*: Массив объектов [[Address|Адресные-объекты#address]].
