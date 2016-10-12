@@ -1,5 +1,7 @@
 Данный запрос служит для поиска адресных объектов по заданному шаблону. 
 
+Если выполнять данный запрос будучи [[авторизованным|HMAC-авторизация]], то поиск будет осуществлен так же и по адресам клиента.
+
 Результатом выполнения этого запроса могут быть:
  * неполные элементы адресной иерархии (улицы, название населенных пунктов, районов, городов и т.д.) каким-либо образом соответствующих заданным критериям поиска. Такие объекты можно использовать для дальнейшего поиска по
 адресному каталогу.
@@ -21,58 +23,9 @@ h3. Параметры GET запроса
 h2. Формат ответа
 
 *Content-Type*: application/json; charset=utf-8
-*Body*: Массив объектов [[Address|Поиск-адреса#Address]].
+*Body*: Массив объектов [[Address|Адресные-объекты#address]].
 
-h3. Address
-
-|_.Name|_.Type|_.Required|_.Description|
-|level|array [[AddressLevel|Поиск-адреса#AddressLevel]]|true|Адрес и его родители (в порядке от потомка к родителю)|
-|priority|number|false|Приоритет|
-|center|object "GeoJSON::Point":http://geojson.org/geojson-spec.html#point|false|Координаты центра поселения|
-|point|object [[Point|Поиск-адреса#Point]] |false|Адресная точка с координатами|
-
-h3. AddressLevel
-
-|_.Name|_.Type|_.Required|_.Description|
-|id|number|false|ID адресного объекта|
-|type|number|true|Тип адресного объекта|
-|name|string|true|Имя адресного объекта|
-|prefix|string|false|Префикс имени адресного объекта|
-
-Типы:
-0 - Страна
-1 - Регион
-2 - Автономный округ
-3 - Область
-4 - Город
-5 - Район города
-6 - Населенный пункт
-7 - Улица
-
-h3. Point
-
-|_.Name|_.Type|_.Required|_.Description|
-|id|number|false|ID адресной точки|
-|info|object [[PointInfo|Поиск-адреса#PointInfo]]|true|Опциональные информационные данные по точке|
-|coordinates|object [[Location|Поиск-адреса#Location]]|false|Координаты|
-
-h3. PointInfo
-
-|_.Name|_.Type|_.Required|_.Description|
-|alias|string|false|Псевдоним точки|
-|house|string|false|Номер дома, включающий в себя буквы и дроби|
-|housing|string|false|Номер корпуса дома|
-|building|string|false|Номер строения|
-|lit|string|false|Литера|
-|porch|string|false|Подъезд (для первого адреса при создании заказа)|
-|flat|string|false|Квартира (для первого адреса при создании заказа)|
-|comment|string|false|Комментарий (для первого адреса при создании заказа)|
-
-h3. Location
-
-|_.Name|_.Type|_.Required|_.Description|
-|lon|number|true|Долгота|
-|lat|number|true|Широта|
+----
 
 h2. Пример
 
