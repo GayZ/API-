@@ -1,4 +1,4 @@
-Для выполнения данного запроса, пользователь должен быть [[авторизован|HMAC-авторизация]].
+*Для выполнения данного запроса, пользователь должен быть [[авторизован|HMAC-авторизация]].*
 
 ----
 
@@ -26,7 +26,7 @@ h3. OrderInfo
 |time|string|false|Время заказа (формат "ISO 8601":https://ru.wikipedia.org/wiki/ISO_8601: YYYY-MM-DDThh:mm:ss±hh:mm) (отсутствует, если на текущее)|
 |comment|string|false|Комментарий|
 |distance|number|false|Расстояние|
-|cost|number|false|Стоимость|
+|cost|object [[Cost|Объект-стоимости-заказа#cost]]|true|Стоимость|
 |executionTime|string|false|Продолжительность поездки (формат "ISO 8601":https://ru.wikipedia.org/wiki/ISO_8601). Только для статуса 4|
 
 Статусы:
