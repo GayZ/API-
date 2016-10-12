@@ -22,7 +22,7 @@ h2. Ответ
 h3. Estimation
 
 |_.Name|_.Type|_.Required|_.Description|
-|cost|object Cost|true|Стоимость|
+|cost|object [[Cost|Предварительная-оценка-заказа#cost]]|true|Стоимость|
 |distance|number|false|Расстояние в метрах|
 
 h3. Cost
