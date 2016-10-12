@@ -22,11 +22,23 @@ h2. Ответ
 h3. Estimation
 
 |_.Name|_.Type|_.Required|_.Description|
-|total|number|true|Стоимость|
-|path|array [[Path|Предварительная-оценка-заказа#path]]|false|Полный путь по заказу|
+|cost|object Cost|true|Стоимость|
+|distance|number|false|Расстояние в метрах|
 
-h3. Path
+h3. Cost
 
 |_.Name|_.Type|_.Required|_.Description|
-|distance|number|true|Расстояние в метрах|
-|line|object "GeoJSON::LineString":http://geojson.org/geojson-spec.html#linestring|true|Точки маршрута|
+|type|string [[CostType|Предварительная-оценка-заказа#costtype]]|true|Тип стоимости|
+|amount|number|true|Стоимость|
+|calculation|string [[CalculationType|Предварительная-оценка-заказа#calculationtype]]|true|Тип рассчета|
+
+h3. CostType
+
+@total@ - Фиксированная стоимость
+@approximate@ - Приблизительная стоимость
+@minimum@ - Минимальная стоимость
+
+h3. CalculationType
+
+@fixed@ - Стоимость в пути не меняется
+@taximeter@ - Стоимость зависит от показаний таксометра
