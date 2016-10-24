@@ -1,0 +1,12 @@
+h2. Запрос
+
+*Метод*: GET
+*URI*: /api/client/mobile/1.0/time
+
+----
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: string [[OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]].
+
