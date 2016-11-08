@@ -34,7 +34,8 @@ h2. Point
 h2. PointInfo
 
 |_.Name|_.Type|_.Required|_.Description|
-|alias|string|false|Псевдоним точки|
+|alias|string|false|Название быстрого адреса|
+|aliasType|object [[AliasType|Адресные-объекты#aliastype]]|false|Тип быстрого адреса|
 |house|string|false|Номер дома, включающий в себя буквы и дроби|
 |housing|string|false|Номер корпуса дома|
 |building|string|false|Номер строения|
@@ -42,6 +43,12 @@ h2. PointInfo
 |porch|string|false|Подъезд (для первого адреса при создании заказа)|
 |flat|string|false|Квартира (для первого адреса при создании заказа)|
 |comment|string|false|Комментарий (для первого адреса при создании заказа)|
+
+h2. AliasType
+
+|_.Name|_.Type|_.Required|_.Description|
+|id|number|true|Идентификатор|
+|name|string|true|Название|
 
 h2. Location
 
