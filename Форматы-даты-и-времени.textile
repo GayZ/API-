@@ -3,3 +3,7 @@
 h3. OffsetDateTime
 
 @YYYY-MM-DDThh:mm:ss±hh:mm@
+
+h3. Duration
+
+https://en.wikipedia.org/wiki/ISO_8601#Durations
