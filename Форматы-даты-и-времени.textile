@@ -2,8 +2,14 @@
 
 h3. OffsetDateTime
 
-@YYYY-MM-DDThh:mm:ss±hh:mm@
+Формат: @YYYY-MM-DDThh:mm:ss±hh:mm@
 
 h3. Duration
 
-https://en.wikipedia.org/wiki/ISO_8601#Durations
+Раздел в википедии: "ISO 8601: Durations":https://en.wikipedia.org/wiki/ISO_8601#Durations
+
+Формат: @PnYnMnDTnHnMnS@
+
+Если @n@ равно нулю, указывать не обязательно.
+
+Пример: @PT35M13.106S@
