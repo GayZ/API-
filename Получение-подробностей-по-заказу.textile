@@ -20,14 +20,14 @@ h3. OrderInfo
 
 |_.Name|_.Type|_.Required|_.Description|
 |state|number|true|Статус заказа|
-|route|array object [[Address|Поиск-адреса#address]]|true|Маршрут заказа|
+|route|array [[Address|Поиск-адреса#address]]|true|Маршрут заказа|
 |assignee|object Assignee|false|Назначенный водитель|
 |options|array number|true|Выбранные тарифные опции|
-|time|string|false|Время заказа (формат "ISO 8601":https://ru.wikipedia.org/wiki/ISO_8601: YYYY-MM-DDThh:mm:ss±hh:mm) (отсутствует, если на текущее)|
+|time|string [[OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]]|false|Время заказа (отсутствует, если на текущее)|
 |comment|string|false|Комментарий|
 |distance|number|false|Расстояние|
 |cost|object [[Cost|Объект-стоимости-заказа#cost]]|true|Стоимость|
-|executionTime|string|false|Продолжительность поездки (формат "ISO 8601":https://ru.wikipedia.org/wiki/ISO_8601). Только для статуса 4|
+|executionTime|string [[Duration|Форматы-даты-и-времени#duration]]|false|Продолжительность поездки (только для статуса 4)|
 
 Статусы:
 1 - Создан
