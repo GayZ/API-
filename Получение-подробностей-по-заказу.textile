@@ -42,6 +42,19 @@ h3. Assignee
 |_.Name|_.Type|_.Required|_.Description|
 |car|object Car|true|Автомобиль|
 |location|object [[Location|Поиск-адреса#Location]]|false|Координаты|
+|call|object AssigneeCall|true|Параметры для связи с водителем|
+
+h3. AssigneeCall
+
+|_.Name|_.Type|_.Required|_.Description|
+|allow|string AllowCall|true|Можно ли звонить водителю и как|
+|numbers|array string|false|Список номеров водителя|
+
+h3. AllowCall
+
+@direct@ - Можно позвонить водителю напрямую
+@via server@ - Можно заказать связь через сервер
+@no@ - Связаться с водителем нельзя
 
 h3. Car
 
