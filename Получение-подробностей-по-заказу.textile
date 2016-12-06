@@ -24,6 +24,7 @@ h3. OrderInfo
 |assignee|object Assignee|false|Назначенный водитель|
 |options|array number|true|Выбранные тарифные опции|
 |time|string [[OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]]|false|Время заказа (отсутствует, если на текущее)|
+|needsProlongation|boolean|true|Необходимо продлить заказ|
 |comment|string|false|Комментарий|
 |distance|number|false|Расстояние|
 |cost|object [[Cost|Объект-стоимости-заказа#cost]]|true|Стоимость|
