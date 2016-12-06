@@ -22,6 +22,7 @@ h3. ShortOrderInfo
 |route|array [[Address|Адресные-объекты#address]]|true|Маршрут заказа|
 |assignee|object Assignee|false|Назначенный водитель|
 |time|string [[OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]]|false|Время заказа (отсутствует, если на текущее)|
+|needsProlongation|boolean|true|Необходимо продлить заказ|
 
 h3. OrderState
 
