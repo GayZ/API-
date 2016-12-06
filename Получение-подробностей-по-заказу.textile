@@ -44,6 +44,23 @@ h3. Assignee
 |location|object [[Location|Поиск-адреса#Location]]|false|Координаты|
 |call|object AssigneeCall|true|Параметры для связи с водителем|
 
+h3. Car
+
+|_.Name|_.Type|_.Required|_.Description|
+|brand|string|true|Брэнд|
+|model|string|true|Модель|
+|color|string|true|Цвет|
+|regNum|string|true|Регистрационный номер|
+|regNumMask|object RegNumMask|true|Маска регистрационного номера|
+
+h3. RegNumMask
+
+|_.Name|_.Type|_.Required|_.Description|
+|name|string|true|Наименование маски|
+|countryId|number|true|Идентификатор страны|
+|regexp|string|true|Регулярное выражение|
+|format|string|true|Форматная строка|
+
 h3. AssigneeCall
 
 |_.Name|_.Type|_.Required|_.Description|
@@ -55,11 +72,3 @@ h3. AllowCall
 @direct@ - Можно позвонить водителю напрямую
 @via server@ - Можно заказать связь через сервер
 @no@ - Связаться с водителем нельзя
-
-h3. Car
-
-|_.Name|_.Type|_.Required|_.Description|
-|brand|string|true|Брэнд|
-|model|string|true|Модель|
-|color|string|true|Цвет|
-|regNum|string|true|Регистрационный номер|
