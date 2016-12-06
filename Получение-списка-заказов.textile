@@ -18,8 +18,9 @@ h3. ShortOrderInfo
 
 |_.Name|_.Type|_.Required|_.Description|
 |id|number|true|Идентификатор заказа|
-|state|number [[OrderState|Получение-списка-заказов#orderstate]]|true|Статус заказа|
+|state|number OrderState|true|Статус заказа|
 |route|array [[Address|Адресные-объекты#address]]|true|Маршрут заказа|
+|assignee|object Assignee|false|Назначенный водитель|
 |time|string [[OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]]|false|Время заказа (отсутствует, если на текущее)|
 
 h3. OrderState
@@ -28,3 +29,22 @@ h3. OrderState
 @2@ - Назначен
 @3@ - По адресу
 @4@ - Выполняется
+
+h3. Assignee
+
+|_.Name|_.Type|_.Required|_.Description|
+|car|object Car|true|Автомобиль|
+
+h3. Car
+
+|_.Name|_.Type|_.Required|_.Description|
+|brand|string|true|Брэнд|
+|model|string|true|Модель|
+|color|string|true|Цвет|
+|regNum|string|true|Регистрационный номер|
+|regNumMask|object RegNumMask|true|Маска регистрационного номера|
+
+h3. RegNumMask
+
+|_.Name|_.Type|_.Required|_.Description|
+|format|string|true|Форматная строка|
