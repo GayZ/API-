@@ -1,0 +1,17 @@
+h2. Запрос
+
+*Метод*: GET
+*URI*: /api/client/mobile/1.0/address/settlement
+
+h3. URI параметры
+
+|_.Name|_.Type|_.Required|_.Description|
+|pattern|string|true|Аргумент для полнотекстового поиска|
+|parent|number|false|ID родительского адресного объекта|
+
+----
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: Массив объектов [[Address|Адресные-объекты#address]].
