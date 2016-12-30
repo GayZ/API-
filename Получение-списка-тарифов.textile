@@ -6,8 +6,8 @@ h2. Запрос
 h3. URI параметры
 
 |_.Name|_.Type|_.Required|_.Description|
-|lon|number|true|Долгота|
-|lat|number|true|Широта|
+|lon|number|false|Долгота|
+|lat|number|false|Широта|
 
 ----
 
