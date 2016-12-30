@@ -3,6 +3,12 @@ h2. Запрос
 *Метод*: GET
 *URI*: /api/client/mobile/1.0/tariffs
 
+h3. URI параметры
+
+|_.Name|_.Type|_.Required|_.Description|
+|lon|number|true|Долгота|
+|lat|number|true|Широта|
+
 ----
 
 h2. Ответ
