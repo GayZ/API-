@@ -1,6 +1,8 @@
 В данном API для целей аутентификации использутеся механизм "HMAC-SHA256":https://ru.wikipedia.org/wiki/HMAC.
 
-h4. Подписывание запросов
+----
+
+h2. Подписывание запросов
 
 Каждый запрос, требующий авторизации, должен содержать следующие HTTP заголовки:
 * *Date*: текущая дата в формате *RFC-1123*.
@@ -11,25 +13,36 @@ h4. Подписывание запросов
 
 Если авторизация неудачна, вернется ответ с кодом 401 Not Authorized.
 
-h4. Пример значений заголовков
+----
 
+h2. Пример
+
+Данные, полученные в ходе регистрации:
+* *id*: 1000007750818
+* *key*: Jwtm8U6yV9JM3T/GfyUucUD7mRlZJbmLN0FaCrV7BIE=
+
+Данные запроса:
+* *method*: GET
+* *path*: /api/client/mobile/1.0/history
+
+Заголовки и их значения для включения в запрос:
 ```
-Date: Mon, 23 May 2016 16:39:39 +0600
-Authentication: hmac 12312313:114696735:7pi1GNhLzUSp5JVKFgkB0VZykud-fT3wJOVqiwDnKOE=
+Date: Tue, 24 Jan 2017 16:24:27 +0600
+Authentication: hmac 1000007750818:737137758:J8DWmoscR3Z4+YbHvZ0D2Up/8Weh0IjXa26QVb0ihqA=
 ```
 
-h4. Примеры реализации на разных платформах
+Данный пример можно использовать для проверки вашей реализации.
 
-* [[Пример на Java 1.8|HMAC-авторизация#Пример-на-java-18]]
-* [[Пример на Python|HMAC-авторизация#Пример-на-python]]
-* [[Пример на PHP|HMAC-авторизация#Пример-на-php]]
+----
 
-h4. См. также
+h2. См. также
 
 * http://restcookbook.com/Basics/loggingin/
 * https://tools.ietf.org/html/rfc2104
 
 ----
+
+h2. Примеры реализации на разных платформах
 
 h3. Пример на Java 1.8
 
@@ -100,8 +113,6 @@ public class NaiveHmacSigner {
 
 ```
 
-----
-
 h3. Пример на Python
 
 В данном разделе приведен пример формирования заголовков *Date* и *Authentication* с использованием языка программирования Python. 
@@ -167,8 +178,6 @@ c = NaiveHmacSigner(12312313, 'beKXDqRvkrbz+aQpEgn41SSh+9qtLAsb0r2cbcQ24cM=')
 print(c.new_signature('GET', '/api/client/mobile/1.0/history'))
 
 ```
-
-----
 
 h3. Пример на PHP
 
