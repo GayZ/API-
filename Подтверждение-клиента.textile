@@ -17,8 +17,8 @@ h2. Ответ
 h3. Confirmed
 
 |_.Name|_.Type|_.Required|_.Description|
-|id|number|true|Постоянный идентификатор клиента|
-|key|string|true|Секретный ключ для подписи запросов (закодированный в base64 массив байт)|
+|id|number|true|Постоянный идентификатор клиента (identity)|
+|key|string|true|Закодированный в base64 секретный ключ (secret)|
 
 h3. Коды ошибок
 
