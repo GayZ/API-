@@ -1,39 +1,33 @@
-В настоящий момент единственным методом авторизации REST запроса является механизм HMAC (hash based message authentication)
+В данном API для целей аутентификации использутеся механизм "HMAC-SHA256":https://ru.wikipedia.org/wiki/HMAC.
 
-h3. Авторизация с помощью HMAC
+h4. Подписывание запросов
 
-Что такое HMAC Можно прочитать тут: http://restcookbook.com/Basics/loggingin/
+Каждый запрос, требующий авторизации, должен содержать следующие HTTP заголовки:
+* *Date*: текущая дата в формате *RFC-1123*.
+* *Authentication*: ```hmac ${identity}:${nonce}:${digest}```, где:
+** *identity* - *id*, полученный в ходе [[регистрации|Подтверждение-клиента#confirmed]].
+** *nonce* - некоторое целое число, уникально идентифицирующее запрос на некотором дискретном временном промежутке (например 10 мин). Каждый новый запрос должен сопровождаться новым значением *nonce*
+** *digest* - подпись сообщения, вычисляемая как ```base64encode(hmac("sha256", {secret}, {request.method} + {request.path} + {request.header.Date} + {nonce}))```. Тут *secret* – секретный ключ, расшаренный между клиентом и сервисом. Для *POST* запроса вида *“http://localhost:8080/api/client/mobile/1.0/orders”* вычислить digest можно следующим образом: ```base64encode(hmac("sha256", {secret}, "POST" + "/api/client/mobile/1.0/orders" + "Mon, 23 May 2016 16:39:39 +0600" + "114696735"))```.
 
-**Важно! Информация размещенная по данной ссылке является лишь иллюстрацией различных техник авторизации HTTP запросов. Алгоритмы, форматы данных и пр. элементы API представленные в статье на restcookbook.com могут отличатся от требований предоставляемый API системы Hive.**
+Если авторизация неудачна, вернется ответ с кодом 401 Not Authorized.
 
-Примеры реализации на разных платформах:
+h4. См. также
+
+* http://restcookbook.com/Basics/loggingin/
+* https://tools.ietf.org/html/rfc2104
+
+h4. Примеры реализации на разных платформах
 
 * [[Пример на Java 1.8|HMAC-авторизация#Пример-на-java-18]]
 * [[Пример на Python|HMAC-авторизация#Пример-на-python]]
-
-Основной алгоритм, принятый для вычисления Message Digest'а - *SHA256*
-
-Для авторизации на сервере нужно будет передать кучку данных в Header'е HTTP запроса:
-* заголовок *Date* в формате *RFC-1123*. Примеры правильных представлений дат:
-```
-Tue, 3 Jun 2008 11:05:30 GMT
-Mon, 23 May 2016 16:39:39 +0600
-```
-* заголовок *Authentication* Следующего содержания: ```hmac ${identity}:${nonce}:${digest}```, где:
-** *identity* - Идентификатор пользователя, от имени которого делается запрос {login, номер телефона, что-то еще}. С помощью этого идентификатора система должна будет обнаружить ключ соответствующий данному пользователю.
-** *nonce* - некоторое целое число, уникально идентифицирующее запрос на некотором дискретном временном промежутке (например 10 мин). Каждый новый запрос должен сопровождаться новым значением *nonce*
-** *digest* - Подпись сообщения, вычисляемая как ```base64encode(hmac("sha256", {secret}, {Request.method} + {Request.uri} + {Request.header.Date} + {nonce}))```. Тут *secret* – секретный ключ, расшаренный между клиентом и сервисом. Для *POST* запроса вида *“http://localhost:8080/api/client/mobile/1.0/orders”* вычислить digest можно следующим образом: ```base64encode(hmac("sha256", {secret}, "POST" + "/api/client/mobile/1.0/orders" + "Mon, 23 May 2016 16:39:39 +0600" + "114696735"))```. _TODO: написать правильное понятное описание_
-
-Значения *identity* и *secret* получаются в ходе [[регистрации|Подтверждение-клиента#confirmed]].
-
-Если авторизация неудачна, вернется ответ с кодом 401.
+* [[Пример на PHP|HMAC-авторизация#Пример-на-php]]
 
 ----
 
 h3. Пример значений заголовков
 
-<pre><code>Date:Mon, 23 May 2016 16:39:39 +0600
-Authentication:hmac system:114696735:7pi1GNhLzUSp5JVKFgkB0VZykud-fT3wJOVqiwDnKOE=
+<pre><code>Date: Mon, 23 May 2016 16:39:39 +0600
+Authentication: hmac 12312313:114696735:7pi1GNhLzUSp5JVKFgkB0VZykud-fT3wJOVqiwDnKOE=
 </code></pre>
 
 ----
@@ -56,7 +50,6 @@ import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
  * Naive implementation of HMAC Signer.
  * Beware!: It is not thread safe!!!
@@ -67,7 +60,6 @@ public class NaiveHmacSigner {
     private final String identity;
     private final SecureRandom rnd = new SecureRandom();
 
-
     public NaiveHmacSigner(String identity, Mac mac) {
         this.mac = mac;
         this.identity = identity;
@@ -77,7 +69,6 @@ public class NaiveHmacSigner {
     private static final DateTimeFormatter DATEFORMAT =
             DateTimeFormatter.RFC_1123_DATE_TIME;
     
-
     public Map<String, String> newSignature(String method, String uri) {
 
         final String dateHeaderValue = OffsetDateTime.now().format(DATEFORMAT);
@@ -96,9 +87,7 @@ public class NaiveHmacSigner {
         return result;
     }
 
-
     private static final  String HMAC_SHA256_KEYSPEC = "HmacSHA256";
-
 
     public static NaiveHmacSigner newSigner(String identity, byte[] secret)
             throws NoSuchAlgorithmException, InvalidKeyException {
@@ -183,6 +172,10 @@ h3. Пример на PHP
 ```php
 <?php
 
+function hmac($algorithm, $secret, $data) {
+  return hex2bin(hash_hmac($algorithm, $data, $secret));
+}
+
 class NaiveHmacSigner {
 
   private $identity;
@@ -194,18 +187,14 @@ class NaiveHmacSigner {
     $this->secret = base64_decode($key);
   }
 
-  private function hmac($algorithm, $secret, $data) {
-    return hex2bin(hash_hmac($algorithm, $data, $secret));
-  }
-
   public function newSignature($requestMethod, $requestPath) {
 
-    $nonce = time();
     $date = date(DATE_RFC1123);
+    $nonce = time();
 
     $data = $requestMethod . $requestPath . $date . $nonce;
 
-    $digest = base64_encode($this->hmac("sha256", $this->secret, $data));
+    $digest = base64_encode(hmac("sha256", $this->secret, $data));
 
     return array(
       "Authentication" => "hmac " . $this->identity . ":" . $nonce . ":" . $digest,
