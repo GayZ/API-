@@ -177,3 +177,47 @@ c = NaiveHmacSigner(12312313, 'beKXDqRvkrbz+aQpEgn41SSh+9qtLAsb0r2cbcQ24cM=')
 print(c.new_signature('GET', '/api/client/mobile/1.0/history'))
 
 ```
+
+h3. Пример на PHP
+
+```php
+<?php
+
+class NaiveHmacSigner {
+
+  private $identity;
+
+  private $secret;
+
+  public function __construct($id, $key) {
+    $this->identity = $id;
+    $this->secret = base64_decode($key);
+  }
+
+  private function hmac($algorithm, $secret, $data) {
+    return hex2bin(hash_hmac($algorithm, $data, $secret));
+  }
+
+  public function newSignature($requestMethod, $requestPath) {
+
+    $nonce = time();
+    $date = date(DATE_RFC1123);
+
+    $data = $requestMethod . $requestPath . $date . $nonce;
+
+    $digest = base64_encode($this->hmac("sha256", $this->secret, $data));
+
+    return array(
+      "Authentication" => "hmac " . $this->identity . ":" . $nonce . ":" . $digest,
+      "Date" => $date
+    );
+  }
+}
+
+$signer = new NaiveHmacSigner(12312313, "beKXDqRvkrbz+aQpEgn41SSh+9qtLAsb0r2cbcQ24cM=");
+$signature = $signer->newSignature("GET", "/api/client/mobile/1.0/history");
+
+print_r($signature);
+
+?>
+```
