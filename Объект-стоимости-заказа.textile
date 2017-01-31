@@ -4,6 +4,7 @@ h3. Cost
 |type|string [[CostType|Объект-стоимости-заказа#costtype]]|true|Тип стоимости|
 |amount|number|true|Стоимость|
 |calculation|string [[CalculationType|Объект-стоимости-заказа#calculationtype]]|true|Тип рассчета|
+|clientCorrection|number|false|Клиентская корректировка|
 
 h3. CostType
 
