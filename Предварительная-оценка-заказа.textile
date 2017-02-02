@@ -11,6 +11,7 @@ h3. EstimateRequest
 |tariff|string|true|Наименование тарифа|
 |options|array number|true|Выбранные опции тарифа|
 |route|array [[Location|Адресные-объекты#location]]|true|Точки маршрута|
+|time|string [[LocalDateTime|Форматы-даты-и-времени#localdatetime]]|false|Время заказа (отсутствует, если на текущее)|
 
 ----
 
