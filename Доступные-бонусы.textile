@@ -1,0 +1,40 @@
+Для выполнения данного запроса, пользователь должен быть [[авторизован|HMAC-авторизация]].
+
+----
+
+h2. Запрос
+
+*Метод*: GET
+*URI*: /api/client/mobile/1.0/bonuses
+
+h3. URI параметры
+
+|_.Name|_.Type|_.Required|_.Description|
+|lon|number|false|Долгота|
+|lat|number|false|Широта|
+
+----
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: Объект Bonuses.
+
+h3. Bonuses
+
+|_.Name|_.Type|_.Required|_.Description|
+|balance|number|true|Наименование тарифа|
+|capabilities|object Capabilities|false|Возможности по оплате бонусами|
+
+h3. Capabilities
+
+|_.Name|_.Type|_.Required|_.Description|
+|type|string CapabilitiesType|true|Тип возможностей|
+|min|number|Если type=min-max|Минимальная сумма|
+|max|string|Если type=min-max|Максимальная сумма|
+|options|number|Если type=options|Варианты сумм|
+
+h3. CapabilitiesType
+
+@min-max@ - Минимальная и максимальная границы использования бонусов
+@options@ - Варианты количества бонусов для оплаты
