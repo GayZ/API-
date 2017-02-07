@@ -29,6 +29,7 @@ h3. OrderInfo
 |distance|number|false|Расстояние|
 |cost|object [[Cost|Объект-стоимости-заказа#cost]]|true|Стоимость|
 |executionTime|string [[Duration|Форматы-даты-и-времени#duration]]|false|Продолжительность поездки (только для статуса 4)|
+|usedBonuses|number|false|Количество бонусов для использования в качестве оплаты|
 
 Статусы:
 1 - Создан
