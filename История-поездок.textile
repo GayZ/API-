@@ -28,6 +28,7 @@ h3. ShortOrderInfo
 |id|number|true|Идентификатор заказа|
 |state|number OrderState|true|Статус заказа|
 |route|array object [[Address|Поиск-адреса#address]]|true|Маршрут заказа|
+|time|string [[OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]]|false|Время завершения заказа|
 
 h3. OrderState
 
