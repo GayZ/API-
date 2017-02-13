@@ -31,8 +31,8 @@ h3. Capabilities
 |_.Name|_.Type|_.Required|_.Description|
 |type|string CapabilitiesType|true|Тип возможностей|
 |min|number|Если type=min-max|Минимальная сумма|
-|max|string|Если type=min-max|Максимальная сумма|
-|options|number|Если type=options|Варианты сумм|
+|max|number|Если type=min-max|Максимальная сумма|
+|options|array number|Если type=options|Варианты сумм|
 
 h3. CapabilitiesType
 
