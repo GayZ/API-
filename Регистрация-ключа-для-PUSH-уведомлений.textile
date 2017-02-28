@@ -1,0 +1,16 @@
+*Метод*: POST
+*URI*: /api/client/mobile/1.0/registration/fcm
+*Content-Type*: application/json; charset=utf-8
+*Body*: Объект FsmInfo
+
+h3. FsmInfo
+
+|_.Name|_.Type|_.Required|_.Description|
+|token|string|true|FCM ключ|
+
+----
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: Пустой объект.
