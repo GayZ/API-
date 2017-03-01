@@ -30,6 +30,7 @@ h2. Point
 |id|number|false|ID адресной точки|
 |info|object [[PointInfo|Адресные-объекты#pointinfo]]|false|Опциональные информационные данные по точке|
 |coordinates|object [[Location|Адресные-объекты#location]]|false|Координаты|
+|source|string|false|Источник адреса|
 
 h2. PointInfo
 
