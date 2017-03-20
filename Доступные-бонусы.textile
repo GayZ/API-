@@ -23,7 +23,7 @@ h2. Ответ
 h3. Bonuses
 
 |_.Name|_.Type|_.Required|_.Description|
-|balance|number|true|Наименование тарифа|
+|balance|number|true|Количество бонусов|
 |capabilities|object Capabilities|false|Возможности по оплате бонусами|
 
 h3. Capabilities
