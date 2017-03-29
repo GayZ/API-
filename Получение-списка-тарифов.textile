@@ -1,7 +1,7 @@
 h2. Запрос
 
 *Метод*: GET
-*URI*: /api/client/mobile/1.0/tariffs
+*URI*: /api/client/mobile/2.0/tariffs
 
 h3. URI параметры
 
@@ -15,6 +15,19 @@ h2. Ответ
 
 *Content-Type*: application/json; charset=utf-8
 *Body*: Массив объектов Tariff.
+
+h3. Service
+
+|_.Name|_.Type|_.Required|_.Description|
+|kind|string ServiceKind|true|Тип объекта сервиса|
+|tariffs|array object Tariff|true, if kind=@service@|Список тарифов|
+|message|string|true, if kind=@stub@|Сообщение о недоступности сервиса|
+
+h3. ServiceKind
+
+|_.Value|_.Description|
+|service|Настройки сервиса|
+|stub|Заглушка|
 
 h3. Tariff
 
