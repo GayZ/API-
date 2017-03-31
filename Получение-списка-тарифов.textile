@@ -14,7 +14,7 @@ h3. URI параметры
 h2. Ответ
 
 *Content-Type*: application/json; charset=utf-8
-*Body*: Массив объектов Tariff.
+*Body*: Объект Service.
 
 h3. Service
 
