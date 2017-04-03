@@ -1,0 +1,21 @@
+h2. Запрос
+
+|*Метод*|GET|
+|*URI*|/api/client/mobile/1.0/drivers|
+
+h3. Параметры
+
+|tariff|string|mandatory|Наименование тарифа|
+|lon|number|mandatory|Долгота|
+|lat|number|mandatory|Широта|
+
+----
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: array object Driver.
+
+h3. Driver
+
+|location|object [[Location|Адресные-объекты#location]]|mandatory|Координаты водителя|
