@@ -1,9 +1,9 @@
 h2. Запрос
 
-*Метод*: GET
-*URI*: /api/client/mobile/1.0/address/geocoding
+|*Метод*|GET|
+|*URI*|/api/client/mobile/1.0/address/geocoding|
 
-h3. Параметры GET запроса
+h3. Параметры
 
 |_.Name|_.Type|_.Required|_.Description|
 |query|string|true|Строка поиска|
@@ -14,5 +14,29 @@ h3. Параметры GET запроса
 
 h2. Ответ
 
-*Content-Type*: application/json; charset=utf-8
-*Body*: Массив объектов [[Address|Адресные-объекты#address]].
+|*Content-Type*|application/json; charset=utf-8|
+|*Body*|array object Address|
+
+h3. Address
+
+|name|string|mandatory|Форматированное наименование|
+|components|array object AddressComponent|optional|Компоненты|
+|types|object AddressTypes|optional|Идентификатор типа|
+|location|object AddressLocation|optional|Координаты|
+
+h3. AddressComponent
+
+|level|number|mandatory|Уровень|
+|name|string|mandatory|Наименование|
+
+h3. AddressTypes
+
+|pointTypeId|number|optional|Идентификатор типа точки|
+|pointTypeName|string|optional|Наименование типа точки|
+|aliasTypeId|number|optional|Идентификатор типа алиаса|
+|aliasTypeName|string|optional|Наименование типа алиаса|
+
+h3. AddressLocation
+
+|lon|number|mandatory|Долгота|
+|lat|number|mandatory|Широта|
