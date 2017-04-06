@@ -5,10 +5,9 @@ h2. Запрос
 
 h3. Параметры
 
-|_.Name|_.Type|_.Required|_.Description|
-|query|string|true|Строка поиска|
-|lon|number|false|Долгота|
-|lat|number|false|Широта|
+|query|string|mandatory|Строка поиска|
+|lon|number|optional|Долгота|
+|lat|number|optional|Широта|
 
 ----
 
