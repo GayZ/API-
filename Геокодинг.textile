@@ -1,7 +1,7 @@
 h2. Запрос
 
 |*Метод*|GET|
-|*URI*|/api/client/mobile/1.0/address/geocoding|
+|*Путь*|/api/client/mobile/1.0/address/geocoding|
 
 h3. Параметры
 
