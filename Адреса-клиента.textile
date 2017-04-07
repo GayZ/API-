@@ -7,12 +7,6 @@ h2. Запрос
 *Метод*: GET
 *URI*: /api/client/mobile/2.0/address/client
 
-h3. Параметры GET запроса
-
-|_.Name|_.Type|_.Required|_.Description|
-|lon|number|true|Текущие координаты клиента (долгота)|
-|lat|number|true|Текущие координаты клиента (широта)|
-
 ----
 
 h2. Ответ
