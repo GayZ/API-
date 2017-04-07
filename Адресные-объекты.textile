@@ -19,8 +19,8 @@ h2. object AddressTypes
 
 h2. object GpsPosition
 
-|lon|number|mandatory|Долгота|
 |lat|number|mandatory|Широта|
+|lon|number|mandatory|Долгота|
 
 h2. number AddressLevel
 
