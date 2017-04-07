@@ -6,8 +6,6 @@ h2. Запрос
 h3. Параметры
 
 |tariff|string|mandatory|Наименование тарифа|
-|lon|number|mandatory|Долгота|
-|lat|number|mandatory|Широта|
 
 ----
 
@@ -18,4 +16,4 @@ h2. Ответ
 
 h3. Driver
 
-|location|object [[Location|Адресные-объекты#location]]|mandatory|Координаты водителя|
+|location|object [[GpsPosition|Адресные-объекты#gpsposition]]|mandatory|Координаты водителя|
