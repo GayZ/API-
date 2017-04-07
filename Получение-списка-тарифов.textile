@@ -3,12 +3,6 @@ h2. Запрос
 *Метод*: GET
 *URI*: /api/client/mobile/2.0/tariffs
 
-h3. URI параметры
-
-|_.Name|_.Type|_.Required|_.Description|
-|lon|number|false|Долгота|
-|lat|number|false|Широта|
-
 ----
 
 h2. Ответ
@@ -21,6 +15,7 @@ h3. Service
 |_.Name|_.Type|_.Required|_.Description|
 |kind|string ServiceKind|true|Тип объекта сервиса|
 |tariffs|array object Tariff|true, if kind=@service@|Список тарифов|
+|address|[[object Address|Адресные-объекты#object-address]]|true, if kind=@service@|Населенный пункт, к которому привязана служба такси|
 |message|string|true, if kind=@stub@|Сообщение о недоступности сервиса|
 
 h3. ServiceKind
@@ -33,7 +28,6 @@ h3. Tariff
 
 |_.Name|_.Type|_.Required|_.Description|
 |name|string|true|Наименование тарифа|
-|address|object [[Address|Адресные-объекты#Address]]|true|Населенный пункт, к которому привязан тариф|
 |options|array [[Option|Получение-списка-тарифов#Option]]|true|Список опций|
 
 h3. Option
