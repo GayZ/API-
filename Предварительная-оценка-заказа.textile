@@ -10,7 +10,7 @@ h3. EstimateRequest
 |_.Name|_.Type|_.Required|_.Description|
 |tariff|string|true|Наименование тарифа|
 |options|array number|true|Выбранные опции тарифа|
-|route|array [[Location|Адресные-объекты#location]]|true|Точки маршрута|
+|route|array [[object GpsPosition|Адресные-объекты#object-gpsposition]]|true|Точки маршрута|
 |time|string [[LocalDateTime|Форматы-даты-и-времени#localdatetime]]|false|Время заказа (отсутствует, если на текущее)|
 
 ----
