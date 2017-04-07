@@ -14,28 +14,4 @@ h3. Параметры
 h2. Ответ
 
 |*Content-Type*|application/json; charset=utf-8|
-|*Body*|array object Address|
-
-h3. Address
-
-|name|string|mandatory|Форматированное наименование|
-|components|array object AddressComponent|optional|Компоненты|
-|types|object AddressTypes|optional|Идентификатор типа|
-|location|object AddressLocation|optional|Координаты|
-
-h3. AddressComponent
-
-|level|number|mandatory|Уровень|
-|name|string|mandatory|Наименование|
-
-h3. AddressTypes
-
-|pointTypeId|number|optional|Идентификатор типа точки|
-|pointTypeName|string|optional|Наименование типа точки|
-|aliasTypeId|number|optional|Идентификатор типа алиаса|
-|aliasTypeName|string|optional|Наименование типа алиаса|
-
-h3. AddressLocation
-
-|lon|number|mandatory|Долгота|
-|lat|number|mandatory|Широта|
+|*Body*|array [[object Address|Адресные-объекты#object-address]]|
