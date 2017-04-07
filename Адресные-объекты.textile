@@ -1,58 +1,40 @@
-h2. Address
+h2. object Address
 
-|_.Name|_.Type|_.Required|_.Description|
-|level|array [[AddressLevel|Адресные-объекты#addresslevel]]|true|Адрес и его родители (в порядке от потомка к родителю)|
-|center|object [[Location|Адресные-объекты#location]]|false|Координаты центра поселения|
-|point|object [[Point|Адресные-объекты#point]]|false|Адресная точка с координатами|
+|name|string|mandatory|Форматированное наименование|
+|components|array [[object AddressComponent|Адресные-объекты#object-addresscomponent]]|optional|Компоненты|
+|types|object AddressTypes|optional|Идентификатор типа|
+|location|object AddressLocation|optional|Координаты|
 
-h2. AddressLevel
+h2. object AddressComponent
 
-|_.Name|_.Type|_.Required|_.Description|
-|id|number|false|ID адресного объекта|
-|type|number [[AddressLevelType|Адресные-объекты#addressleveltype]]|true|Тип адресного объекта|
-|name|string|true|Имя адресного объекта|
-|prefix|string|false|Префикс имени адресного объекта|
+|level|number AddressLevel|mandatory|Уровень|
+|name|string|mandatory|Наименование|
 
-h2. AddressLevelType
+h2. object AddressTypes
 
-@0@ - Страна
-@1@ - Регион
-@2@ - Автономный округ
-@3@ - Область
-@4@ - Город
-@5@ - Район города
-@6@ - Населенный пункт
-@7@ - Улица
+|pointType|number PointType|optional|Идентификатор типа точки|
+|pointTypeName|string|optional|Наименование типа точки|
+|aliasType|number AliasType|optional|Идентификатор типа алиаса|
+|aliasTypeName|string|optional|Наименование типа алиаса|
 
-h2. Point
+h2. object AddressLocation
 
-|_.Name|_.Type|_.Required|_.Description|
-|id|number|false|ID адресной точки|
-|info|object [[PointInfo|Адресные-объекты#pointinfo]]|false|Опциональные информационные данные по точке|
-|coordinates|object [[Location|Адресные-объекты#location]]|false|Координаты|
-|source|string|false|Источник адреса|
+|lon|number|mandatory|Долгота|
+|lat|number|mandatory|Широта|
 
-h2. PointInfo
+h2. number AddressLevel
 
-|_.Name|_.Type|_.Required|_.Description|
-|alias|string|false|Название быстрого адреса|
-|aliasType|object [[AliasType|Адресные-объекты#aliastype]]|false|Тип быстрого адреса|
-|house|string|false|Номер дома, включающий в себя буквы и дроби|
-|housing|string|false|Номер корпуса дома|
-|building|string|false|Номер строения|
-|lit|string|false|Литера|
-|porch|string|false|Подъезд (для первого адреса при создании заказа)|
-|flat|string|false|Квартира (для первого адреса при создании заказа)|
-|comment|string|false|Комментарий (для первого адреса при создании заказа)|
+|0|Страна|
+|1|Административный уровень 1|
+|2|Административный уровень 2|
+|3|Административный уровень 3|
+|4|Административный уровень 4|
+|5|Административный уровень 5|
+|6|Административный уровень 6|
+|7|Улица|
+|8|Дом|
+|9|Алиас|
 
-h2. AliasType
+h2. number PointType
 
-|_.Name|_.Type|_.Required|_.Description|
-|id|number|true|Идентификатор|
-|name|string|true|Название|
-
-h2. Location
-
-|_.Name|_.Type|_.Required|_.Description|
-|lon|number|true|Долгота|
-|lat|number|true|Широта|
+h2. number AliasType
