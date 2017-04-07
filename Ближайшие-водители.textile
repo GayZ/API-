@@ -16,4 +16,4 @@ h2. Ответ
 
 h3. Driver
 
-|location|object [[GpsPosition|Адресные-объекты#gpsposition]]|mandatory|Координаты водителя|
+|location|[[object GpsPosition|Адресные-объекты#object-gpsposition]]|mandatory|Координаты водителя|
