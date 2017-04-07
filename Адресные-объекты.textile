@@ -3,7 +3,7 @@ h2. object Address
 |name|string|mandatory|Форматированное наименование|
 |components|array [[object AddressComponent|Адресные-объекты#object-addresscomponent]]|optional|Компоненты|
 |types|[[object AddressTypes|Адресные-объекты#object-addresstypes]]|optional|Идентификатор типа|
-|location|[[object AddressLocation|Адресные-объекты#object-addresslocation]]|optional|Координаты|
+|position|[[object GpsPosition|Адресные-объекты#object-gpsposition]]|optional|Координаты|
 
 h2. object AddressComponent
 
@@ -17,7 +17,7 @@ h2. object AddressTypes
 |aliasType|[[number AliasType|Адресные-объекты#number-aliastype]]|optional|Идентификатор типа алиаса|
 |aliasTypeName|string|optional|Наименование типа алиаса|
 
-h2. object AddressLocation
+h2. object GpsPosition
 
 |lon|number|mandatory|Долгота|
 |lat|number|mandatory|Широта|
