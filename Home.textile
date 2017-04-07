@@ -35,7 +35,7 @@ h3. HTTP headers
 
 |_.Name|_.Type|_.Description|
 |Accept-Language|string|Нужен для формирования локализованных текстов сообщений для отображения в мобильном приложении. Значение локали должно соответсвовать стандарту "RFC 2616":https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4. Если это значение не указано - будут использоваться текущие региональные настройки сервера|
-|X-Hive-GPS-Position|string|Текущие координаты устройства в формате "{latitude} {longitude}". Пример: @X-Hive-GPS-Position: 73.239624 54.991737@|
+|X-Hive-GPS-Position|string|Текущие координаты устройства в формате "{latitude} {longitude}". Пример: @X-Hive-GPS-Position: 55.0355 73.3012@|
 
 h3. Ответ от сервера
 
