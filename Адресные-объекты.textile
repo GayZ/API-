@@ -2,19 +2,19 @@ h2. object Address
 
 |name|string|mandatory|Форматированное наименование|
 |components|array [[object AddressComponent|Адресные-объекты#object-addresscomponent]]|optional|Компоненты|
-|types|object AddressTypes|optional|Идентификатор типа|
-|location|object AddressLocation|optional|Координаты|
+|types|[[object AddressTypes|Адресные-объекты#object-addresstypes]]|optional|Идентификатор типа|
+|location|[[object AddressLocation|Адресные-объекты#object-addresslocation]]|optional|Координаты|
 
 h2. object AddressComponent
 
-|level|number AddressLevel|mandatory|Уровень|
+|level|[[number AddressLevel|Адресные-объекты#number-addresslevel]]|mandatory|Уровень|
 |name|string|mandatory|Наименование|
 
 h2. object AddressTypes
 
-|pointType|number PointType|optional|Идентификатор типа точки|
+|pointType|[[number PointType|Адресные-объекты#number-pointtype]]|optional|Идентификатор типа точки|
 |pointTypeName|string|optional|Наименование типа точки|
-|aliasType|number AliasType|optional|Идентификатор типа алиаса|
+|aliasType|[[number AliasType|Адресные-объекты#number-aliastype]]|optional|Идентификатор типа алиаса|
 |aliasTypeName|string|optional|Наименование типа алиаса|
 
 h2. object AddressLocation
