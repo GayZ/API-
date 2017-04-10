@@ -5,21 +5,29 @@
 h2. Запрос
 
 *Метод*: POST
-*URI*: /api/client/mobile/2.2/orders
+*URI*: /api/client/mobile/3.0/orders
 *Content-Type*: application/json; charset=utf-8
-*Body*: Объект CreateRequest
+*Body*: object CreateRequest
 
-h3. CreateRequest
+h3. object CreateRequest
 
 |_.Name|_.Type|_.Required|_.Description|
 |tariff|string|true|Наименование тарифа|
 |options|array number|true|Выбранные опции тарифа|
-|route|array [[Address|Адресные-объекты#address]]|true|Маршрут|
+|route|array object OrderAddress|true|Маршрут|
 |phone|string|true|Телефон для связи|
 |time|string [[LocalDateTime|Форматы-даты-и-времени#localdatetime]]|false|Время заказа (отсутствует, если на текущее)|
 |comment|string|false|Комментарий к заказу|
 |costCorrection|number|false|Корректировка стоимости|
 |useBonuses|number|false|Количество бонусов для использования в качестве оплаты|
+
+h3. object OrderAddress
+
+|_.Name|_.Type|_.Required|_.Description|
+|address|[[object Address|Адресные-объекты#object-address]]|true|Адрес|
+|entrance|string|false|Подъезд|
+|flat|string|false|Квартира|
+|comment|string|false|Комментарий|
 
 ----
 
@@ -32,111 +40,3 @@ h3. Created
 
 |_.Name|_.Type|_.Required|_.Description|
 |id|number|true|Идентификатор заказа|
-
-----
-
-h2. Примеры запроса
-
-h3. 1. Адрес, полученный от сервера HiveTaxi
-
-<pre><code>
-{
-  "options": [1, 2, 4],
-  "route": [
-    {
-      "point": {
-        "id": 1000000157102,
-        "info": {
-          "porch": "4",
-          "flat": "19"
-        }
-      }
-    }, {
-      "point": {
-        "id": 1000000157088
-      }
-    }
-  ],
-  "phone": "+79123456789"
-}
-</code></pre>
-
-h3. 2. Точка на карте 
-
-<pre><code>
-{
-  "options": [1, 2, 4],
-  "route": [
-    {
-      "point": {
-        "info": {
-          "alias": "Точка на карте"
-        },
-        "coordinates": {
-          "lat": 55.0524572270224,
-          "lon": 73.43110375106335
-        }
-      }
-    }
-  ],
-  "phone": "+79123456789"
-}
-</code></pre>
-
-h3. 3. Адрес, полученный от сервера Google API
-
-<pre><code>
-{
-  "options": [1, 2, 4],
-  "route": [
-    {
-      "levels": [
-        {
-          "type": 7,
-          "name": "улица Ленина",
-        }, {
-          "type": 4,
-          "name": "г Омск",
-        }, {
-          "type": 1,
-          "name": "обл Омская",
-        }
-      ],
-      "point": {
-        "info": {
-          "house": "41/1",
-          "porch": "4",
-          "flat": "19"
-        },
-        "coordinates": {
-          "lat": 55.0524572270224,
-          "lon": 73.43110375106335
-        }
-      }
-    }, {
-      "levels": [
-        {
-          "type": 7,
-          "name": "проспект Мира",
-        }, {
-          "type": 4,
-          "name": "г Омск",
-        }, {
-          "type": 1,
-          "name": "обл Омская",
-        }
-      ],
-      "point": {
-        "info": {
-          "house": "51 к2"
-        },
-        "coordinates": {
-          "lat": 55.0125123452,
-          "lon": 74.124544444
-        }
-      }
-    }
-  ],
-  "phone": "+79123456789"
-}
-</code></pre>
