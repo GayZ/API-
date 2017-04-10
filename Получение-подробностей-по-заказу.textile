@@ -5,7 +5,7 @@
 h2. Запрос
 
 *Метод*: GET
-*URI*: /api/client/mobile/1.0/orders/{id}
+*URI*: /api/client/mobile/2.0/orders/{id}
 
 где {id} - идентификатор заказа.
 
@@ -20,7 +20,7 @@ h3. OrderInfo
 
 |_.Name|_.Type|_.Required|_.Description|
 |state|number|true|Статус заказа|
-|route|array [[Address|Поиск-адреса#address]]|true|Маршрут заказа|
+|route|array [[object Address|Адресные-объекты#object-address]]|true|Маршрут заказа|
 |assignee|object Assignee|false|Назначенный водитель|
 |options|array number|true|Выбранные тарифные опции|
 |time|string [[OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]]|false|Время заказа (отсутствует, если на текущее)|
@@ -43,7 +43,7 @@ h3. Assignee
 
 |_.Name|_.Type|_.Required|_.Description|
 |car|object Car|true|Автомобиль|
-|location|object [[Location|Поиск-адреса#Location]]|false|Координаты|
+|location|[[object GpsPosition|Адресные-объекты#object-gpsposition]]|false|Координаты|
 |call|object AssigneeCall|true|Параметры для связи с водителем|
 
 h3. Car
