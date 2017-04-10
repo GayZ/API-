@@ -5,7 +5,7 @@
 h2. Запрос
 
 *Метод*: GET
-*URI*: /api/client/mobile/1.0/orders
+*URI*: /api/client/mobile/2.0/orders
 
 ----
 
@@ -19,7 +19,7 @@ h3. ShortOrderInfo
 |_.Name|_.Type|_.Required|_.Description|
 |id|number|true|Идентификатор заказа|
 |state|number OrderState|true|Статус заказа|
-|route|array [[Address|Адресные-объекты#address]]|true|Маршрут заказа|
+|route|array [[object Address|Адресные-объекты#object-address]]|true|Маршрут заказа|
 |assignee|object Assignee|false|Назначенный водитель|
 |time|string [[OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]]|false|Время заказа (отсутствует, если на текущее)|
 |needsProlongation|boolean|true|Необходимо продлить заказ|
