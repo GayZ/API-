@@ -14,6 +14,8 @@ h2. Ответ
 *Content-Type*: application/json; charset=utf-8
 *Body*: array object Driver.
 
+Список будет непустым только при наличии заголовка @X-Hive-GPS-Position@ в запросе.
+
 h3. Driver
 
 |location|[[object GpsPosition|Адресные-объекты#object-gpsposition]]|mandatory|Координаты водителя|
