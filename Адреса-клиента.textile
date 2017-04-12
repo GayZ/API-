@@ -13,3 +13,5 @@ h2. Ответ
 
 *Content-Type*: application/json; charset=utf-8
 *Body*: array [[object Address|Адресные-объекты#object-address]]
+
+При наличии заголовка @X-Hive-GPS-Position@ результат будет отсортирован по удалению от клиента.
