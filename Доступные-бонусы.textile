@@ -5,15 +5,9 @@
 h2. Запрос
 
 *Метод*: GET
-*URI*: /api/client/mobile/1.0/bonuses
+*URI*: /api/client/mobile/2.0/bonuses
 
 Важно наличие заголовка @X-Hive-GPS-Position@ в запросе для точного определения службы такси, обслуживающей регион клиента.
-
-h3. URI параметры
-
-|_.Name|_.Type|_.Required|_.Description|
-|lon|number|false|Долгота|
-|lat|number|false|Широта|
 
 ----
 
