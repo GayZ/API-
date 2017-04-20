@@ -6,8 +6,6 @@ h2. Запрос
 h3. Параметры
 
 |query|string|mandatory|Строка поиска|
-|lon|number|optional|Долгота|
-|lat|number|optional|Широта|
 
 ----
 
