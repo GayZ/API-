@@ -50,7 +50,7 @@ h3. DispatcherCall
 
 |_.Name|_.Type|_.Required|_.Description|
 |allow|string AllowCall|true|Можно ли звонить диспетчеру и как|
-|numbers|string|false|Телефон диспетчерской|
+|number|string|false|Телефон диспетчерской|
 
 h3. AllowCall
 
