@@ -19,6 +19,14 @@ h3. ClientInfo
 |gender|number|false|Пол (0 - муж., 1 - жен.)|
 |birthDate|string|false|Дата рождения (формат "ISO 8601":https://ru.wikipedia.org/wiki/ISO_8601: YYYY-MM-DDThh:mm:ss±hh:mm)|
 
+h3. Пример
+
+<pre>
+{
+  "phone": "+71234567890"
+}
+</pre>
+
 ----
 
 h2. Ответ
