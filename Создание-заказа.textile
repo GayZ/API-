@@ -15,7 +15,6 @@ h3. object CreateRequest
 |tariff|string|true|Наименование тарифа|
 |options|array number|true|Выбранные опции тарифа|
 |route|array object OrderAddress|true|Маршрут|
-|phone|string|true|Телефон для связи|
 |time|string [[LocalDateTime|Форматы-даты-и-времени#localdatetime]]|false|Время заказа (отсутствует, если на текущее)|
 |comment|string|false|Комментарий к заказу|
 |costCorrection|number|false|Корректировка стоимости|
