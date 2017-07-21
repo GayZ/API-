@@ -1,3 +1,10 @@
+h2. object ClientAddress
+
+|address|[[object Address|Адресные-объекты#object-address]]|mandatory|Адрес|
+|entrance|string|optional|Подъезд|
+|flat|string|optional|Квартира|
+|comment|string|optional|Комментарий|
+
 h2. object Address
 
 |name|string|mandatory|Форматированное наименование|
