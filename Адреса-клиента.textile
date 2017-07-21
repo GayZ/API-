@@ -5,13 +5,11 @@
 h2. Запрос
 
 *Метод*: GET
-*URI*: /api/client/mobile/2.0/address/client
+*URI*: /api/client/mobile/3.0/address/client
 
 ----
 
 h2. Ответ
 
 *Content-Type*: application/json; charset=utf-8
-*Body*: array [[object Address|Адресные-объекты#object-address]]
-
-При наличии заголовка @X-Hive-GPS-Position@ в запросе результат будет отсортирован по удалению от клиента.
+*Body*: array [[object ClientAddress|Адресные-объекты#object-clientaddress]]
