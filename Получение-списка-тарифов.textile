@@ -31,6 +31,8 @@ h3. Tariff
 
 |_.Name|_.Type|_.Required|_.Description|
 |name|string|true|Наименование тарифа|
+|icon|string|false|Идентификатор иконки|
+|description|string|false|Описание|
 |options|array [[Option|Получение-списка-тарифов#Option]]|true|Список опций|
 
 h3. Option
