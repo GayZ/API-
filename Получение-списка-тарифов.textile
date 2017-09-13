@@ -34,6 +34,7 @@ h3. Tariff
 |icon|string|false|Идентификатор иконки|
 |description|string|false|Описание|
 |options|array [[Option|Получение-списка-тарифов#Option]]|true|Список опций|
+|minCost|number|true|Минимальная стоимость заказа|
 
 h3. Option
 
