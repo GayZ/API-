@@ -1,0 +1,25 @@
+h2. Запрос
+
+|*Метод*|GET|
+|*URI*|/api/client/mobile/1.0/payment-methods|
+
+----
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: array object PaymentMethod.
+
+h3. object PaymentMethod
+
+|kind|string PaymentMethodKind|mandatory|Вид способа оплаты|
+|id|number|optional|Идентификатор|
+|name|string|optional|Наименование|
+
+Если @kind@=@cash@, то поля @id@ и @name@ будут отсутствовать.
+Если @kind@=@contractor@, то поля @id@ и @name@ будут присутствовать и означать идентификатор и наименование контрагента соответственно.
+
+h3. string PaymentMethodKind
+
+|cash|Наличные|
+|contractor|Контрагент|
