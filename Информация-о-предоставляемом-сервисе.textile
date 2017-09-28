@@ -5,7 +5,7 @@ h2. Запрос
 *Content-Type*: application/json; charset=utf-8
 *Body*: object Params.
 
-h3. Params
+h3. object Params
 
 |paymentMethod|[[object PaymentMethod|Способы-оплаты#object-paymentmethod]]|optional|Способ оплаты|
 
@@ -40,10 +40,10 @@ h3. object Tariff
 |name|string|mandatory|Наименование тарифа|
 |icon|string|optional|Идентификатор иконки|
 |description|string|optional|Описание|
-|options|array [[Option|Получение-списка-тарифов#Option]]|mandatory|Список опций|
+|options|array object Option|mandatory|Список опций|
 |minCost|number|mandatory|Минимальная стоимость заказа|
 
-h3. Option
+h3. object Option
 
 |id|number|mandatory|Идентификатор опции|
 |name|string|mandatory|Наименование опции|
@@ -55,7 +55,7 @@ h3. string OptionValueType
 |fixed|Фиксированная стоимость|
 |percent|Процент от стоимости заказа|
 
-h3. DispatcherCall
+h3. object DispatcherCall
 
 |allow|string AllowCall|mandatory|Можно ли звонить диспетчеру и как|
 |number|string|optional|Телефон диспетчерской|
