@@ -1,27 +1,26 @@
 h2. Запрос
 
 *Метод*: POST
-*URI*: /api/client/mobile/1.0/estimate
+*URI*: /api/client/mobile/2.0/estimate
 *Content-Type*: application/json; charset=utf-8
-*Body*: Объект EstimateRequest
+*Body*: object Params
 
-h3. EstimateRequest
+h3. object Params
 
-|_.Name|_.Type|_.Required|_.Description|
-|tariff|string|true|Наименование тарифа|
-|options|array number|true|Выбранные опции тарифа|
-|route|array [[object GpsPosition|Адресные-объекты#object-gpsposition]]|true|Точки маршрута|
-|time|string [[LocalDateTime|Форматы-даты-и-времени#localdatetime]]|false|Время заказа (отсутствует, если на текущее)|
+|paymentMethod|[[object PaymentMethod|Способы-оплаты#object-paymentmethod]]|optional|Способ оплаты|
+|tariff|number|mandatory|Идентификатор тарифа|
+|options|array number|mandatory|Выбранные опции тарифа|
+|route|array [[object GpsPosition|Адресные-объекты#object-gpsposition]]|mandatory|Точки маршрута|
+|time|string [[LocalDateTime|Форматы-даты-и-времени#localdatetime]]|optional|Время заказа (отсутствует, если на текущее)|
 
 ----
 
 h2. Ответ
 
 *Content-Type*: application/json; charset=utf-8
-*Body*: Объект Estimation.
+*Body*: object Estimation.
 
-h3. Estimation
+h3. object Estimation
 
-|_.Name|_.Type|_.Required|_.Description|
-|cost|object [[Cost|Объект-стоимости-заказа#cost]]|true|Стоимость|
-|distance|number|false|Расстояние в метрах|
+|cost|object [[Cost|Объект-стоимости-заказа#cost]]|mandatory|Стоимость|
+|distance|number|optional|Расстояние в метрах|
