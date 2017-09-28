@@ -9,6 +9,8 @@ h3. Params
 
 |paymentMethod|[[object PaymentMethod|Способы-оплаты#object-paymentmethod]]|optional|Способ оплаты|
 
+h3. Примечание
+
 Важно наличие заголовка @X-Hive-GPS-Position@ в запросе для точного определения службы такси, обслуживающей регион клиента.
 
 ----
