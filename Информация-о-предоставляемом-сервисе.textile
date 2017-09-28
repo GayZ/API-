@@ -1,0 +1,65 @@
+h2. Запрос
+
+*Метод*: POST
+*URI*: /api/client/mobile/1.0/service
+*Content-Type*: application/json; charset=utf-8
+*Body*: object Params.
+
+h3. Params
+
+|paymentMethod|[[PaymentMethod|Способы-оплаты#object-paymentmethod]]|optional|Способ оплаты|
+
+Важно наличие заголовка @X-Hive-GPS-Position@ в запросе для точного определения службы такси, обслуживающей регион клиента.
+
+----
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: object Service.
+
+h3. object Service
+
+|kind|string ServiceKind|mandatory|Тип объекта сервиса|
+|tariffs|array object Tariff|mandatory, if kind=@service@|Список тарифов|
+|dispatcherCall|object DispatcherCall|mandatory, if kind=@service@|Параметры для связи с диспетчерской|
+|address|[[object Address|Адресные-объекты#object-address]]|mandatory, if kind=@service@|Населенный пункт, к которому привязана служба такси|
+|message|string|mandatory, if kind=@stub@|Сообщение о недоступности сервиса|
+
+h3. string ServiceKind
+
+|_.Value|_.Description|
+|service|Настройки сервиса|
+|stub|Заглушка|
+
+h3. object Tariff
+
+|id|number|mandatory|Идентификатор тарифа|
+|name|string|mandatory|Наименование тарифа|
+|icon|string|optional|Идентификатор иконки|
+|description|string|optional|Описание|
+|options|array [[Option|Получение-списка-тарифов#Option]]|mandatory|Список опций|
+|minCost|number|mandatory|Минимальная стоимость заказа|
+
+h3. Option
+
+|id|number|mandatory|Идентификатор опции|
+|name|string|mandatory|Наименование опции|
+|type|string OptionValueType|mandatory|Тип стоимости|
+|value|number|mandatory|Стоимость опции|
+
+h3. string OptionValueType
+
+|fixed|Фиксированная стоимость|
+|percent|Процент от стоимости заказа|
+
+h3. DispatcherCall
+
+|allow|string AllowCall|mandatory|Можно ли звонить диспетчеру и как|
+|number|string|optional|Телефон диспетчерской|
+
+h3. string AllowCall
+
+|direct|Можно позвонить в диспетчерскую напрямую|
+|via server|Можно заказать связь через сервер|
+|no|Связаться с диспетчером нельзя|
