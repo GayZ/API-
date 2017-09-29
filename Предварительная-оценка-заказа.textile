@@ -7,7 +7,7 @@ h2. Запрос
 
 h3. object Params
 
-|paymentMethod|[[object PaymentMethod|Способы-оплаты#object-paymentmethod]]|optional|Способ оплаты|
+|paymentMethod|[[object PaymentMethod|Способы-оплаты#object-paymentmethod]]|mandatory|Способ оплаты|
 |tariff|number|mandatory|Идентификатор тарифа|
 |options|array number|mandatory|Выбранные опции тарифа|
 |route|array [[object GpsPosition|Адресные-объекты#object-gpsposition]]|mandatory|Точки маршрута|
