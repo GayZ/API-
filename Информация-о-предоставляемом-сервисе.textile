@@ -30,7 +30,6 @@ h3. object Service
 
 h3. string ServiceKind
 
-|_.Value|_.Description|
 |service|Настройки сервиса|
 |stub|Заглушка|
 
