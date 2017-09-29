@@ -29,5 +29,4 @@ h2. Ответ
 
 h3. object Result
 
-|_.Name|_.Type|_.Required|_.Description|
-|id|number|true|Идентификатор заказа|
+|id|number|mandatory|Идентификатор заказа|
