@@ -1,11 +1,14 @@
 h2. Запрос
 
-|*Метод*|GET|
-|*URI*|/api/client/mobile/1.0/drivers|
+*Метод*: POST
+*URI*: /api/client/mobile/2.0/drivers
+*Content-Type*: application/json; charset=utf-8
+*Body*: object Params
 
-h3. Параметры
+h3. object Params
 
-|tariff|string|mandatory|Наименование тарифа|
+|paymentMethod|[[object PaymentMethod|Способы-оплаты#object-paymentmethod]]|mandatory|Способ оплаты|
+|tariff|number|mandatory|Идентификатор тарифа|
 
 ----
 
