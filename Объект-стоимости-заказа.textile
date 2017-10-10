@@ -1,18 +1,23 @@
 h3. Cost
 
-|_.Name|_.Type|_.Required|_.Description|
-|type|string [[CostType|Объект-стоимости-заказа#costtype]]|true|Тип стоимости|
-|amount|number|true|Стоимость|
-|calculation|string [[CalculationType|Объект-стоимости-заказа#calculationtype]]|true|Тип рассчета|
-|clientCorrection|number|false|Клиентская корректировка|
+|type|string CostType|mandatory|Тип стоимости|
+|amount|number|mandatory|Стоимость|
+|calculation|string CalculationType|mandatory|Тип рассчета|
+|clientCorrection|number|optional|Клиентская корректировка|
+|details|array object CostItem|mandatory|Детали|
 
-h3. CostType
+h3. string CostType
 
-@total@ - Фиксированная стоимость
-@approximate@ - Приблизительная стоимость
-@minimum@ - Минимальная стоимость
+|total|Фиксированная стоимость|
+|approximate|Приблизительная стоимость|
+|minimum|Минимальная стоимость|
 
-h3. CalculationType
+h3. string CalculationType
 
-@fixed@ - Стоимость в пути не меняется
-@taximeter@ - Стоимость зависит от показаний таксометра
+|fixed|Стоимость в пути не меняется|
+|taximeter|Стоимость зависит от показаний таксометра|
+
+h3. object CostItem
+
+|title|string|mandatory|Наименование|
+|cost|number|mandatory|Стоимость|
