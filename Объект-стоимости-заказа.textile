@@ -4,7 +4,7 @@ h3. Cost
 |amount|number|mandatory|Стоимость|
 |calculation|string CalculationType|mandatory|Тип рассчета|
 |clientCorrection|number|optional|Клиентская корректировка|
-|details|array object CostItem|mandatory|Детали|
+|details|array object CostItem|optional|Детали|
 
 h3. string CostType
 
