@@ -49,6 +49,7 @@ h3. Assignee
 h3. Car
 
 |_.Name|_.Type|_.Required|_.Description|
+|alias|string|true|Краткое наименование|
 |brand|string|true|Брэнд|
 |model|string|true|Модель|
 |color|string|true|Цвет|
