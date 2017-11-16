@@ -16,8 +16,7 @@ h2. Ответ
 *Content-Type*: application/json; charset=utf-8
 *Body*: object CardAdditionRef.
 
-h3. object CardAdditionRef
+h3. CardAdditionRef
 
 |redirectUrl|string|mandatory|URL станицы для ввода данных карты|
-
 
