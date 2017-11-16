@@ -24,3 +24,4 @@ h3. string PaymentMethodKind
 
 |cash|Наличные|
 |contractor|Контрагент|
+|credit_card|Банковская карта|
