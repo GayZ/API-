@@ -1,0 +1,19 @@
+h2. Запрос
+
+|*Метод*|POST|
+|*URI*|/api/client/mobile/1.0/payment-methods|
+
+Без контента
+
+----
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: object CardAdditionRef.
+
+h3. object CardAdditionRef
+
+|redirectUrl|string|mandatory|URL станицы для ввода данных карты|
+
+
