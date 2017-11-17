@@ -18,5 +18,5 @@ h2. Ответ
 
 h3. CardAdditionRef
 
-|redirectUrl|string|mandatory|URL станицы для ввода данных карты|
+|redirectUrl|string|mandatory|URL страницы для ввода данных карты|
 
