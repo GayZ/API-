@@ -48,6 +48,7 @@ h3. object Option
 |name|string|mandatory|Наименование опции|
 |type|string OptionValueType|mandatory|Тип стоимости|
 |value|number|mandatory|Стоимость опции|
+|mandatory|boolean|mandatory|Должна ли опция быть включенной по-умолчанию|
 
 h3. string OptionValueType
 
