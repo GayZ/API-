@@ -24,6 +24,7 @@ h3. object Service
 
 |kind|string ServiceKind|mandatory|Тип объекта сервиса|
 |tariffs|array object Tariff|mandatory, if kind=@service@|Список тарифов|
+|cardPaymentAllowed|boolean|mandatory, if kind=@service@|Доступна ли оплата по банковской карте|
 |dispatcherCall|object DispatcherCall|mandatory, if kind=@service@|Параметры для связи с диспетчерской|
 |address|[[object Address|Адресные-объекты#object-address]]|mandatory, if kind=@service@|Населенный пункт, к которому привязана служба такси|
 |message|string|mandatory, if kind=@stub@|Сообщение о недоступности сервиса|
