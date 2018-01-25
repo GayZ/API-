@@ -3,6 +3,7 @@ h3. Cost
 |type|string CostType|mandatory|Тип стоимости|
 |amount|number|mandatory|Стоимость|
 |calculation|string CalculationType|mandatory|Тип рассчета|
+|modifier|object CostModifier|optional|Модификатор стоимости|
 |clientCorrection|number|optional|Клиентская корректировка|
 |details|array object CostItem|optional|Детали|
 
@@ -16,6 +17,16 @@ h3. string CalculationType
 
 |fixed|Стоимость в пути не меняется|
 |taximeter|Стоимость зависит от показаний таксометра|
+
+h3. object CostModifier
+
+|type|string CostModifierType|mandatory|Тип модификатора|
+|value|number|mandatory|Значение модификатора|
+
+h3. string CostModifierType
+
+|add|Добавление|
+|multiply|Умножение|
 
 h3. object CostItem
 
