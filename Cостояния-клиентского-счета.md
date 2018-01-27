@@ -1,0 +1,16 @@
+h2. HTTP-запрос
+
+|*Метод*|GET|
+|*Путь*|/api/client/mobile/1.0/account|
+
+----
+
+h2. HTTP-ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: object AccountState.
+
+h3. object AccountState
+
+|balance|number|mandatory|Текущий баланс|
+|currency|number|mandatory|Код валюты 4217|
