@@ -13,4 +13,4 @@ h2. HTTP-ответ
 h3. object AccountState
 
 |balance|number|mandatory|Текущий баланс|
-|currency|number|mandatory|Код валюты 4217|
+|currency|number|mandatory|Код валюты согласно ISO 4217|
