@@ -5,14 +5,14 @@
 h2. Запрос
 
 *Метод*: GET
-*URI*: /api/client/mobile/1.0/orders/{id}/correct-cost
+*URI*: /api/client/mobile/1.0/orders/{id}/fix-cost
 
 где {id} - идентификатор заказа.
 
 h3. URI параметры
 
 |_.Name|_.Type|_.Required|_.Description|
-|amount|number|true|Сумма для прибавления к основной стоимости заказа|
+|amount|number|true|Фиксированная стоимость|
 
 ----
 
