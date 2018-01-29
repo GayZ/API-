@@ -17,7 +17,7 @@ h3. object Params
 |route|array [[object ClientAddress|Адресные-объекты#object-clientaddress]]|mandatory|Маршрут|
 |time|string [[LocalDateTime|Форматы-даты-и-времени#localdatetime]]|optional|Время заказа (отсутствует, если на текущее)|
 |comment|string|optional|Комментарий к заказу|
-|costCorrection|number|optional|Корректировка стоимости|
+|fixCost|number|optional|Зафиксировать стоимость|
 |useBonuses|number|optional|Количество бонусов для использования в качестве оплаты|
 
 ----
