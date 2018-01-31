@@ -31,6 +31,7 @@ h3. OrderInfo
 |executionTime|string [[Duration|Форматы-даты-и-времени#duration]]|false|Продолжительность поездки (только для статуса 4)|
 |usedBonuses|number|false|Количество бонусов для использования в качестве оплаты|
 |paymentMethod|[[object PaymentMethod|Способы-оплаты#object-paymentmethod]]|false|Способ оплаты|
+|costFixAllowed|boolean|true|Разрешена ли фиксация стоимости заказа|
 
 Статусы:
 1 - Создан
