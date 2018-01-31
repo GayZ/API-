@@ -42,7 +42,7 @@ h3. object Tariff
 |description|string|optional|Описание|
 |options|array object Option|mandatory|Список опций|
 |minCost|number|mandatory|Минимальная стоимость заказа|
-|costFixAllowed|boolean|true|Разрешена ли фиксация стоимости заказа|
+|costFixAllowed|boolean|mandatory|Разрешена ли фиксация стоимости заказа|
 
 h3. object Option
 
