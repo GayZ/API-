@@ -1,0 +1,21 @@
+*Для выполнения данного запроса, пользователь должен быть [[авторизован|HMAC-авторизация]].*
+
+----
+
+h2. Запрос
+
+*Метод*: POST
+*URI*: /api/client/mobile/1.0/orders/{id}/payment-method, где {id} - идентификатор заказа.
+*Content-Type*: application/json; charset=utf-8
+*Body*: object Params
+
+h3. object Params
+
+|paymentMethod|[[object PaymentMethod|Способы-оплаты#object-paymentmethod]]|mandatory|Способ оплаты|
+
+----
+
+h2. Ответ
+
+*Content-Type*: application/json; charset=utf-8
+*Body*: Пустой.
