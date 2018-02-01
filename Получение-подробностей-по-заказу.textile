@@ -20,7 +20,7 @@ h3. OrderInfo
 
 |_.Name|_.Type|_.Required|_.Description|
 |state|number|true|Статус заказа|
-|route|array [[object Address|Адресные-объекты#object-address]]|true|Маршрут заказа|
+|route|array [[object ClientAddress|Адресные-объекты#object-clientaddress]]|true|Маршрут заказа|
 |assignee|object Assignee|false|Назначенный водитель|
 |options|array number|true|Выбранные тарифные опции|
 |time|string [[OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]]|false|Время заказа (отсутствует, если на текущее)|
