@@ -5,7 +5,7 @@
 h2. Запрос
 
 *Метод*: GET
-*URI*: /api/client/mobile/2.1/orders/{id}
+*URI*: /api/client/mobile/2.2/orders/{id}
 
 где {id} - идентификатор заказа.
 
@@ -22,7 +22,7 @@ h3. OrderInfo
 |state|number|true|Статус заказа|
 |route|array [[object ClientAddress|Адресные-объекты#object-clientaddress]]|true|Маршрут заказа|
 |assignee|object Assignee|false|Назначенный водитель|
-|options|array number|true|Выбранные тарифные опции|
+|options|array object Option|true|Тарифные опции|
 |time|string [[OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]]|false|Время заказа (отсутствует, если на текущее)|
 |needsProlongation|boolean|true|Необходимо продлить заказ|
 |comment|string|false|Комментарий|
@@ -77,3 +77,18 @@ h3. AllowCall
 @direct@ - Можно позвонить водителю напрямую
 @via server@ - Можно заказать связь через сервер
 @no@ - Связаться с водителем нельзя
+
+h3. object Option
+
+|_.Name|_.Type|_.Required|_.Description|
+|id|number|true|Идентификатор опции|
+|name|string|true|Наименование опции|
+|type|string OptionValueType|true|Тип стоимости|
+|value|number|true|Стоимость опции|
+|selected|boolean|true|Выбрана ли опция|
+
+h3. string OptionValueType
+
+|_.Value|_.Description|
+|fixed|Фиксированная стоимость|
+|percent|Процент от стоимости заказа|
