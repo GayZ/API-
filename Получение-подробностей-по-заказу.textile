@@ -32,6 +32,7 @@ h3. OrderInfo
 |usedBonuses|number|false|Количество бонусов для использования в качестве оплаты|
 |paymentMethod|[[object PaymentMethod|Способы-оплаты#object-paymentmethod]]|false|Способ оплаты|
 |costFixAllowed|boolean|true|Разрешена ли фиксация стоимости заказа|
+|isComing|boolean|false|Уведомил ли клиент о том, что выходит|
 
 Статусы:
 1 - Создан
