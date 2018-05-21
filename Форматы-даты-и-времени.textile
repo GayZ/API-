@@ -8,6 +8,10 @@ h3. LocalDateTime
 
 Формат: @YYYY-MM-DDThh:mm:ss@
 
+h3. LocalDate
+
+Формат: @YYYY-MM-DD@
+
 h3. Duration
 
 Раздел в википедии: "ISO 8601: Durations":https://en.wikipedia.org/wiki/ISO_8601#Durations
