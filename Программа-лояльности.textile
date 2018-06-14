@@ -5,7 +5,7 @@
 h2. Запрос
 
 |*Метод*|GET|
-|*Путь*|/api/client/mobile/1.0/loyalty-program|
+|*Путь*|/api/client/mobile/1.1/loyalty-program|
 |*Заголовки*|Hive-Profile, X-Hive-GPS-Position|
 
 ----
@@ -20,6 +20,7 @@ h3. object Result
 |friends|number|mandatory|Количество друзей в реферальной сети|
 |referralCode|string|optional|Реферальный код для распространения|
 |statistics|array object ResultDayStat|mandatory|Статистика за последние 30 дней|
+|shareMessage|string|mandatory|Сообщение со ссылкой на приложение|
 
 h3. object ResultDayStat
 
