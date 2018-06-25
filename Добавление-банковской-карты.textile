@@ -21,6 +21,7 @@ h2. Ответ
 h3. CardAdditionRef
 
 |redirectUrl|string|mandatory|URL страницы для ввода данных карты|
+|vendor|string|mandatory|короткий идентификатор оператора банковских карт|
 
 h3. CardAdditionCallback
 
