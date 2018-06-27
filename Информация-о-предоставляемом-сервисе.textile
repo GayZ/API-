@@ -25,6 +25,7 @@ h3. object Service
 |kind|string ServiceKind|mandatory|Тип объекта сервиса|
 |tariffs|array object Tariff|mandatory, if kind=@service@|Список тарифов|
 |settings|object Settings|mandatory, if kind=@service@|Настройки приложения|
+|location|[[object GpsPosition|Адресные-объекты#object-gpsposition]]|optional, if kind=@service@|Координаты региона, в котором предоставляется сервис|
 |message|string|mandatory, if kind=@stub@|Сообщение о недоступности сервиса|
 
 h3. string ServiceKind
