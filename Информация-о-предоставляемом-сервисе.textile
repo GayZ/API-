@@ -1,7 +1,7 @@
 h2. Запрос
 
 *Метод*: POST
-*URI*: /api/client/mobile/1.0/service
+*URI*: /api/client/mobile/1.1/service
 *Content-Type*: application/json; charset=utf-8
 *Body*: object Params.
 
@@ -24,9 +24,7 @@ h3. object Service
 
 |kind|string ServiceKind|mandatory|Тип объекта сервиса|
 |tariffs|array object Tariff|mandatory, if kind=@service@|Список тарифов|
-|cardPaymentAllowed|boolean|mandatory, if kind=@service@|Доступна ли оплата по банковской карте|
-|dispatcherCall|object DispatcherCall|mandatory, if kind=@service@|Параметры для связи с диспетчерской|
-|address|[[object Address|Адресные-объекты#object-address]]|mandatory, if kind=@service@|Населенный пункт, к которому привязана служба такси|
+|settings|object Settings|mandatory, if kind=@service@|Настройки приложения|
 |message|string|mandatory, if kind=@stub@|Сообщение о недоступности сервиса|
 
 h3. string ServiceKind
@@ -42,7 +40,8 @@ h3. object Tariff
 |description|string|optional|Описание|
 |options|array object Option|mandatory|Список опций|
 |minCost|number|mandatory|Минимальная стоимость заказа|
-|costFixAllowed|boolean|mandatory|Разрешена ли фиксация стоимости заказа|
+|costChangeAllowed|boolean|mandatory|Разрешено ли изменение стоимости заказа|
+|costChangeStep|number|optional|Шаг изменения стоимости|
 
 h3. object Option
 
@@ -56,6 +55,41 @@ h3. string OptionValueType
 
 |fixed|Фиксированная стоимость|
 |percent|Процент от стоимости заказа|
+
+h3. object Settings
+
+|cardPaymentAllowed|boolean|mandatory|Доступна ли оплата по банковской карте|
+|dispatcherCall|object DispatcherCall|mandatory|Параметры для связи с диспетчерской|
+|mainInterface|string MainInterfaceMode|mandatory|Режим отображения главного интерфейса|
+|geocoding|array string GeocodingService|optional|Сервисы геокодинга|
+|currency|object Currency|mandatory|Валюта|
+|maps|array string MapSource|mandatory|Типы отображаемой карты|
+|averageSpeed|number|mandatory|Средняя скорость|
+|destinationRequired|boolean|mandatory|Конечный адрес обязателен|
+
+h3. string MainInterfaceMode
+
+|simple|Простой|
+|advanced|Сложный|
+|simple-advanced|Сначала простой|
+|advanced-simple|Сначала сложный|
+
+h3. string GeocodingService
+
+|google|Google|
+|yandex|Yandex|
+|osm|OpenStreetMap|
+
+h3. string MapSource
+
+|google|Google|
+|yandex|Yandex|
+|osm|OpenStreetMap|
+
+h3. object Currency
+
+|code|string|mandatory|Код валюты|
+|sign|string|mandatory|Символ|
 
 h3. object DispatcherCall
 
