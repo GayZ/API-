@@ -1,0 +1,16 @@
+h2. Запрос
+
+|*Метод*|GET|
+|*Путь*|/api/client/mobile/1.0/countries|
+
+----
+
+h2. Ответ
+
+|*Тело* (JSON)|array object Country|
+
+h3. object Country
+
+|name|string|mandatory|Название|
+|isoCode|string|mandatory|Код по ISO 3166-1 alpha-2|
+|phoneCode|string|mandatory|Телефонный код|
