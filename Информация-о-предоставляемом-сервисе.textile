@@ -8,6 +8,7 @@ h2. Запрос
 h3. object Params
 
 |paymentMethod|[[object PaymentMethod|Способы-оплаты#object-paymentmethod]]|optional|Способ оплаты|
+|prevServiceId|string|optional|Идентификатор сервиса из предыдущего запроса|
 
 h3. Примечание
 
@@ -23,8 +24,9 @@ h2. Ответ
 h3. object Service
 
 |kind|string ServiceKind|mandatory|Тип объекта сервиса|
+|serviceId|string|mandatory, if kind=@service@/@stub@|Идентификатор сервиса|
+|settings|object Settings|mandatory, if kind=@service@/@stub@|Настройки приложения|
 |tariffs|array object Tariff|mandatory, if kind=@service@|Список тарифов|
-|settings|object Settings|mandatory, if kind=@service@|Настройки приложения|
 |location|[[object GpsPosition|Адресные-объекты#object-gpsposition]]|optional, if kind=@service@|Координаты региона, в котором предоставляется сервис|
 |message|string|mandatory, if kind=@stub@|Сообщение о недоступности сервиса|
 
