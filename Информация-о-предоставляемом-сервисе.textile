@@ -34,6 +34,7 @@ h3. string ServiceKind
 
 |service|Настройки сервиса|
 |stub|Заглушка|
+|same|Информация не изменилась|
 
 h3. object Tariff
 
