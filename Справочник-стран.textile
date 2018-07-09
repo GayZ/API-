@@ -14,3 +14,4 @@ h3. object Country
 |name|string|mandatory|Название|
 |isoCode|string|mandatory|Код по ISO 3166-1 alpha-2|
 |phoneCode|string|mandatory|Телефонный код|
+|phoneMask|string|optional|Телефонная маска|
