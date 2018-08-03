@@ -16,11 +16,18 @@ h2. Ответ
 
 h3. object Result
 
+|lptype|string|mandatory|тип программы лояльности (см. ниже)|
 |balance|number|mandatory|Текущий баланс|
 |friends|number|mandatory|Количество друзей в реферальной сети|
 |referralCode|string|optional|Реферальный код для распространения|
 |statistics|array object ResultDayStat|mandatory|Статистика за последние 30 дней|
 |shareMessage|string|mandatory|Сообщение со ссылкой на приложение|
+
+h3. Типы программ лояльности
+
+|none|Программы лояльности не доступны|
+|basic-bonus|Базовая система лояльности|
+|ext-bonus-ref|Продвинутая система лояльности, с бонусами и реферральными системами|
 
 h3. object ResultDayStat
 
