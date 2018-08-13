@@ -20,7 +20,6 @@ h3. object Result
 |balance|number|mandatory|Текущий баланс|
 |friends|number|mandatory|Количество друзей в реферальной сети|
 |referralCode|string|optional|Реферальный код для распространения|
-|statistics|array object ResultDayStat|mandatory|Статистика за последние 30 дней|
 |shareMessage|string|mandatory|Сообщение со ссылкой на приложение|
 
 h3. Типы программ лояльности
@@ -28,11 +27,3 @@ h3. Типы программ лояльности
 |none|Программы лояльности не доступны|
 |basic-bonus|Базовая система лояльности|
 |ext-bonus-referral-vip|Продвинутая система лояльности, с бонусами и реферральными системами|
-
-h3. object ResultDayStat
-
-|date|string [[LocalDate|Форматы-даты-и-времени#localdatetime]]|mandatory|Дата|
-|plusBalance|number|mandatory|Денег прибыло|
-|plusBalanceRef|number|mandatory|Денег прибыло от друзей|
-|minusBalance|number|mandatory|Денег потрачено|
-|plusFriends|number|mandatory|Друзей прибыло|
