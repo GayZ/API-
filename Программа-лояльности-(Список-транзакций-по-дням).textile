@@ -1,0 +1,23 @@
+Для выполнения данного запроса, пользователь должен быть [[авторизован|HMAC-авторизация]].
+
+----
+
+h2. Запрос
+
+|*Метод*|GET|
+|*Путь*|/api/client/mobile/1.1/loyalty-program/transactions/by-day|
+|*Заголовки*|Hive-Profile, X-Hive-GPS-Position|
+
+----
+
+h2. Ответ
+
+|*Тело* (JSON)|array object ResultDayStat|mandatory|Статистика за последние 30 дней|
+
+h3. object ResultDayStat
+
+|date|string [[LocalDate|Форматы-даты-и-времени#localdatetime]]|mandatory|Дата|
+|plusBalance|number|mandatory|Денег прибыло|
+|plusBalanceRef|number|mandatory|Денег прибыло от друзей|
+|minusBalance|number|mandatory|Денег потрачено|
+|plusFriends|number|mandatory|Друзей прибыло|
