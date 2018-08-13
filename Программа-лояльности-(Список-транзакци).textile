@@ -1,0 +1,26 @@
+Для выполнения данного запроса, пользователь должен быть [[авторизован|HMAC-авторизация]].
+
+----
+
+h2. Запрос
+
+|*Метод*|GET|
+|*Путь*|/api/client/mobile/1.1/loyalty-program/transactions/seq|
+|*Заголовки*|Hive-Profile, X-Hive-GPS-Position|
+
+h3. Параметры
+
+|oft|string|optional|Смещение в истории транзакций|
+----
+
+h2. Ответ
+
+|*Тело* (JSON)|array Tramsaction|
+
+h3. object Tramsaction
+
+|date|string [[OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]]|mandatory|Дата|
+|amount|number|mandatory|Размер и направление платежа(положительное число для начислений, отрицательное для списаний)|
+|balance|number|mandatory|Остаток на счете по завершению транзакции|
+|typ|number|mandatory|Тип платежа|
+|oft|string|mandatory|Смещение в истории платежей относительно начала|
