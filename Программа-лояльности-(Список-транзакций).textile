@@ -15,9 +15,9 @@ h3. Параметры
 
 h2. Ответ
 
-|*Тело* (JSON)|array Tramsaction|
+|*Тело* (JSON)|array Transaction|
 
-h3. object Tramsaction
+h3. object Transaction
 
 |date|string [[OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]]|mandatory|Дата|
 |amount|number|mandatory|Размер и направление платежа(положительное число для начислений, отрицательное для списаний)|
