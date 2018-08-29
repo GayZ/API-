@@ -5,7 +5,7 @@
 h2. Запрос
 
 |*Метод*|GET|
-|*Путь*|/api/client/mobile/1.1/loyalty-program/transactions/seq|
+|*Путь*|/api/client/mobile/1.1/loyalty-program/transactions/seq-detailed|
 |*Заголовки*|Hive-Profile, X-Hive-GPS-Position|
 
 h3. Параметры
