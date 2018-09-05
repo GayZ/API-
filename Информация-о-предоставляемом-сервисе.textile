@@ -47,6 +47,8 @@ h3. object Tariff
 |minCost|number|mandatory|Минимальная стоимость заказа|
 |costChangeAllowed|boolean|mandatory|Разрешено ли изменение стоимости заказа|
 |costChangeStep|number|optional|Шаг изменения стоимости|
+|hint|string|optional|Подсказка|
+|showEstimation|boolean|optional|Показывать предрассчет|
 
 h3. object Option
 
