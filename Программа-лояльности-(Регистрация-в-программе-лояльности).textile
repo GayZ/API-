@@ -1,0 +1,20 @@
+Для выполнения данного запроса, пользователь должен быть [[авторизован|HMAC-авторизация]].
+
+----
+
+h2. Запрос
+
+|*Метод*|POST|
+|*Путь*|/api/client/mobile/1.0/loyalty-program|
+|*Заголовки*|Hive-Profile, X-Hive-GPS-Position|
+|*Body*:|object Params|
+
+h3. object Params
+
+|referralCode|string|mandatory|Реферальный код|
+
+----
+
+h2. Ответ
+
+Пустой JSON-объект
