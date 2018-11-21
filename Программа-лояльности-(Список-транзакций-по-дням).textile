@@ -6,7 +6,7 @@
 h2. Запрос
 
 |*Метод*|GET|
-|*Путь*|/api/client/mobile/1.1/loyalty-program/transactions/by-day|
+|*Путь*|/api/client/mobile/1.2/loyalty-program/transactions/by-day|
 |*Заголовки*|Hive-Profile, X-Hive-GPS-Position|
 
 ----
