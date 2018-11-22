@@ -5,7 +5,7 @@ h2. Запрос
 ----
 
 |*Метод*|DELETE|
-|*URI*|/api/client/mobile/1.0/payment-methods/:card_id|
+|*URI*|/api/client/mobile/1.0/payment-methods/{card_id}|
 
 h4. Параметры URL
 
