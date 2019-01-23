@@ -1,14 +1,14 @@
 h2. Запрос
 
 *Метод*: POST
-*URI*: /api/client/mobile/2.0/estimate
+*URI*: /api/client/mobile/3.0/estimate
 *Content-Type*: application/json; charset=utf-8
 *Body*: object Params
 
 h3. object Params
 
 |paymentMethod|[[object PaymentMethod|Способы-оплаты#object-paymentmethod]]|mandatory|Способ оплаты|
-|tariff|number|mandatory|Идентификатор тарифа|
+|tariffs|array number|mandatory|Массив тарифов (не более 4х за раз)|
 |options|array number|mandatory|Выбранные опции тарифа|
 |route|array [[object GpsPosition|Адресные-объекты#object-gpsposition]]|mandatory|Точки маршрута|
 |time|string [[LocalDateTime|Форматы-даты-и-времени#localdatetime]]|optional|Время заказа (отсутствует, если на текущее)|
@@ -20,7 +20,14 @@ h2. Ответ
 *Content-Type*: application/json; charset=utf-8
 *Body*: object Estimation.
 
+h3. object Estimations
+
+|estimations|array Estimation|mandatory|Список предварительных оценок стоимости по заказу|
+|path|object GeoJSON::LineString|mandatory|Предполагаемый подробный маршрут поездки|
+
 h3. object Estimation
 
+|tariff|number|mandatory|ID тарифа, по которому производилась оценка стоимости|
 |cost|object [[Cost|Объект-стоимости-заказа#cost]]|mandatory|Стоимость|
 |distance|number|optional|Расстояние в метрах|
+|submissionTime|number|optional|Предполагаемое минимальное время подачи машины (в секундах)|
