@@ -19,6 +19,8 @@ h3. object Params
 |comment|string|optional|Комментарий к заказу|
 |fixCost|number|optional|Зафиксировать стоимость|
 |useBonuses|number|optional|Количество бонусов для использования в качестве оплаты|
+|disableSms|boolean|optional|Отключить СМС оповещение|
+|disableVoice|boolean|optional|Отключить голосовое оповещение|
 
 ----
 
