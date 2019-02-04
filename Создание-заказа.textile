@@ -21,6 +21,7 @@ h3. object Params
 |useBonuses|number|optional|Количество бонусов для использования в качестве оплаты|
 |disableSms|boolean|optional|Отключить СМС оповещение|
 |disableVoice|boolean|optional|Отключить голосовое оповещение|
+|enablePushUpdates|boolean|optional|Получать обновления состояния заказа через Push|
 
 ----
 
