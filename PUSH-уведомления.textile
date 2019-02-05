@@ -1,0 +1,16 @@
+|kind|string NotificationKind|Тип уведомления|
+|orderId|number|Идентификатор заказа|
+|text|string|Текст уведомления|
+
+h2. string NotificationKind
+
+|order-created|Заказ создан|
+|order-changed|Заказ изменен|
+|order-assigned|Водитель назначен|
+|order-driver-delay|Водитель опаздывает|
+|order-driver-arrived|Водитель подъехал|
+|order-unassigned|Водитель снят|
+|order-completed|Заказ завершен|
+|order-bonus-deposit|Бонусы начислены|
+|order-bonus-withdrawal|Бонусы списаны|
+|order-cancelled|Заказ отменен|
