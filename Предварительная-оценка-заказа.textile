@@ -24,10 +24,10 @@ h3. object Estimations
 
 |estimations|array Estimation|mandatory|Список предварительных оценок стоимости по заказу|
 |path|object GeoJSON::LineString|mandatory|Предполагаемый подробный маршрут поездки|
+|distance|number|optional|Расстояние в метрах|
 
 h3. object Estimation
 
 |tariff|number|mandatory|ID тарифа, по которому производилась оценка стоимости|
 |cost|object [[Cost|Объект-стоимости-заказа#cost]]|mandatory|Стоимость|
-|distance|number|optional|Расстояние в метрах|
 |submissionTime|number|optional|Предполагаемое минимальное время подачи машины (в секундах)|
