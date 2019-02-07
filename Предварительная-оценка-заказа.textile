@@ -23,7 +23,7 @@ h2. Ответ
 h3. object Estimations
 
 |estimations|array Estimation|mandatory|Список предварительных оценок стоимости по заказу|
-|path|object GeoJSON::LineString|mandatory|Предполагаемый подробный маршрут поездки|
+|path|object GeoJSON::LineString|optional|Предполагаемый подробный маршрут поездки|
 |distance|number|optional|Расстояние в метрах|
 
 h3. object Estimation
