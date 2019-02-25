@@ -1,0 +1,28 @@
+*Для выполнения данного запроса, пользователь должен быть [[авторизован|HMAC-авторизация]].*
+
+----
+
+h2. Запрос
+
+|*Метод*|GET|
+|*Путь*|/api/client/mobile/1.0/orders/{id}/completed, где {id} - идентификатор заказа|
+
+----
+
+h2. Ответ
+
+|*Тело* (JSON)|object Result|
+
+h3. object Result
+
+|route|array [[object Address|Адресные-объекты#object-address]]|mandatory|Маршрут заказа|
+|completionDate|[[string OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]]|mandatory|Дата завершения заказа|
+|check|array object ResultCheckItem|mandatory|Позиции чека|
+|total|number|mandatory|Итого|
+|usedBonuses|number|mandatory|Количество бонусов, использованных в качестве оплаты|
+|toPay|number|mandatory|К оплате|
+
+h3. object ResultCheckItem
+
+|title|string|mandatory|Наименование|
+|cost|number|mandatory|Стоимость|
