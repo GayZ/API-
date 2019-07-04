@@ -9,6 +9,7 @@ h2. string NotificationKind
 |order-assigned|Водитель назначен|
 |order-driver-delay|Водитель опаздывает|
 |order-driver-arrived|Водитель подъехал|
+|order-executing|Заказ выполняется|
 |order-unassigned|Водитель снят|
 |order-completed|Заказ завершен|
 |order-bonus-deposit|Бонусы начислены|
