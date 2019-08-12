@@ -15,7 +15,7 @@ h2. Ответ
 
 h3. object Result
 
-|completionDate|[[string OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]]|mandatory|Дата завершения заказа|
+|completionDate|[[string LocalDateTime|Форматы-даты-и-времени#localdatetime]]|mandatory|Дата завершения заказа|
 |route|array [[object ClientAddress|Адресные-объекты#object-clientaddress]]|mandatory|Маршрут заказа|
 |comment|string|optional|Комментарий к заказу|
 |check|array object ResultCheckItem|mandatory|Позиции чека|
