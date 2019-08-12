@@ -5,7 +5,7 @@
 h2. Запрос
 
 |*Метод*|GET|
-|*Путь*|/api/client/mobile/1.0/orders/{id}/completed, где {id} - идентификатор заказа|
+|*Путь*|/api/client/mobile/1.0/orders/{id}/finished, где {id} - идентификатор заказа|
 
 ----
 
@@ -15,8 +15,9 @@ h2. Ответ
 
 h3. object Result
 
-|route|array [[object Address|Адресные-объекты#object-address]]|mandatory|Маршрут заказа|
 |completionDate|[[string OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]]|mandatory|Дата завершения заказа|
+|route|array [[object ClientAddress|Адресные-объекты#object-clientaddress]]|mandatory|Маршрут заказа|
+|comment|string|optional|Комментарий к заказу|
 |check|array object ResultCheckItem|mandatory|Позиции чека|
 |total|number|mandatory|Итого|
 |usedBonuses|number|mandatory|Количество бонусов, использованных в качестве оплаты|
