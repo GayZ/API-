@@ -5,7 +5,7 @@
 h2. Запрос
 
 *Метод*: GET
-*URI*: /api/client/mobile/2.2/orders/{id}
+*URI*: /api/client/mobile/2.3/orders/{id}
 
 где {id} - идентификатор заказа.
 
@@ -23,7 +23,7 @@ h3. OrderInfo
 |route|array [[object ClientAddress|Адресные-объекты#object-clientaddress]]|true|Маршрут заказа|
 |assignee|object Assignee|false|Назначенный водитель|
 |options|array object Option|true|Тарифные опции|
-|time|string [[OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]]|false|Время заказа (отсутствует, если на текущее)|
+|time|string [[LocalDateTime|Форматы-даты-и-времени#localdatetime]]|false|Время заказа (отсутствует, если на текущее)|
 |needsProlongation|boolean|true|Необходимо продлить заказ|
 |comment|string|false|Комментарий|
 |distance|number|false|Расстояние|
@@ -57,15 +57,6 @@ h3. Car
 |model|string|true|Модель|
 |color|string|true|Цвет|
 |regNum|string|true|Регистрационный номер|
-|regNumMask|object RegNumMask|true|Маска регистрационного номера|
-
-h3. RegNumMask
-
-|_.Name|_.Type|_.Required|_.Description|
-|name|string|true|Наименование маски|
-|countryId|number|true|Идентификатор страны|
-|regexp|string|true|Регулярное выражение|
-|format|string|true|Форматная строка|
 
 h3. AssigneeCall
 
