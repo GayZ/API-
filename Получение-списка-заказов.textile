@@ -43,8 +43,3 @@ h3. Car
 |model|string|true|Модель|
 |color|string|true|Цвет|
 |regNum|string|true|Регистрационный номер|
-
-h3. RegNumMask
-
-|_.Name|_.Type|_.Required|_.Description|
-|format|string|true|Форматная строка|
