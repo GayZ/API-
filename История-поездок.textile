@@ -5,7 +5,7 @@
 h2. Запрос
 
 *Метод*: GET
-*URI*: /api/client/mobile/2.0/history
+*URI*: /api/client/mobile/2.1/history
 
 h3. Параметры GET запроса
 
@@ -28,7 +28,7 @@ h3. ShortOrderInfo
 |id|number|true|Идентификатор заказа|
 |state|number OrderState|true|Статус заказа|
 |route|array [[object Address|Адресные-объекты#object-address]]|true|Маршрут заказа|
-|time|string [[OffsetDateTime|Форматы-даты-и-времени#offsetdatetime]]|false|Время завершения заказа|
+|time|string [[LocalDateTime|Форматы-даты-и-времени#localdatetime]]|false|Время завершения заказа|
 
 h3. OrderState
 
