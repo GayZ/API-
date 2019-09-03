@@ -1,7 +1,7 @@
 h2. Запрос
 
 *Метод*: POST
-*URI*: /api/client/mobile/3.0/estimate
+*URI*: /api/client/mobile/3.1/estimate
 *Content-Type*: application/json; charset=utf-8
 *Body*: object Params
 
@@ -11,7 +11,17 @@ h3. object Params
 |tariffs|array number|mandatory|Массив тарифов (не более 4х за раз)|
 |options|array number|mandatory|Выбранные опции тарифа|
 |route|array [[object GpsPosition|Адресные-объекты#object-gpsposition]]|mandatory|Точки маршрута|
-|time|string [[LocalDateTime|Форматы-даты-и-времени#localdatetime]]|optional|Время заказа (отсутствует, если на текущее)|
+|time|object Time|optional|Время заказа (отсутствует, если на текущее)|
+
+h3. object Time
+
+|type|string TimeType|mandatory|тип|
+|value|string|mandatory|Значение|
+
+h3. string TimeType
+
+|absolute|Абсолютное время заказа; в поле value должна быть строка [[LocalDateTime|Форматы-даты-и-времени#localdatetime]]|
+|relative|Относительное время заказа; в поле value должна быть строка [[Duration|Форматы-даты-и-времени#duration]]|
 
 ----
 
