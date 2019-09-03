@@ -23,7 +23,6 @@ h3. object Params
 |disableVoice|boolean|optional|Отключить голосовое оповещение|
 |enablePushUpdates|boolean|optional|Получать обновления состояния заказа через Push|
 
-
 h3. object Time
 
 |type|string TimeType|mandatory|тип|
