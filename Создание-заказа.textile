@@ -5,7 +5,7 @@
 h2. Запрос
 
 *Метод*: POST
-*URI*: /api/client/mobile/4.0/orders
+*URI*: /api/client/mobile/4.1/orders
 *Content-Type*: application/json; charset=utf-8
 *Body*: object Params
 
@@ -15,13 +15,25 @@ h3. object Params
 |tariff|number|mandatory|Идентификатор тарифа|
 |options|array number|mandatory|Выбранные опции тарифа|
 |route|array [[object ClientAddress|Адресные-объекты#object-clientaddress]]|mandatory|Маршрут|
-|time|string [[LocalDateTime|Форматы-даты-и-времени#localdatetime]]|optional|Время заказа (отсутствует, если на текущее)|
+|time|object Time|optional|Время заказа (отсутствует, если на текущее)|
 |comment|string|optional|Комментарий к заказу|
 |fixCost|number|optional|Зафиксировать стоимость|
 |useBonuses|number|optional|Количество бонусов для использования в качестве оплаты|
 |disableSms|boolean|optional|Отключить СМС оповещение|
 |disableVoice|boolean|optional|Отключить голосовое оповещение|
 |enablePushUpdates|boolean|optional|Получать обновления состояния заказа через Push|
+
+
+h3. object Time
+
+|type|string TimeType|mandatory|тип|
+|value|String|mandatory|Значение|
+
+h3. string TimeType
+
+|absolute|Абсолютное время заказа; в поле value должна быть строка [[LocalDateTime|Форматы-даты-и-времени#localdatetime]]|
+|relative|Относительное время заказа; в поле value должна быть строка [[Duration|Форматы-даты-и-времени#duration]]|
+
 
 ----
 
