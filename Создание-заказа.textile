@@ -26,7 +26,7 @@ h3. object Params
 h3. object Time
 
 |type|string TimeType|mandatory|тип|
-|value|String|mandatory|Значение|
+|value|string|mandatory|Значение|
 
 h3. string TimeType
 
