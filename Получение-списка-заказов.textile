@@ -5,7 +5,7 @@
 h2. Запрос
 
 *Метод*: GET
-*URI*: /api/client/mobile/2.1/orders
+*URI*: /api/client/mobile/2.2/orders
 
 ----
 
@@ -30,6 +30,7 @@ h3. OrderState
 @2@ - Назначен
 @3@ - По адресу
 @4@ - Выполняется
+@7@ - Зарезервирован
 
 h3. Assignee
 
