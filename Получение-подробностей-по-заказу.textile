@@ -5,7 +5,7 @@
 h2. Запрос
 
 *Метод*: GET
-*URI*: /api/client/mobile/2.3/orders/{id}
+*URI*: /api/client/mobile/2.4/orders/{id}
 
 где {id} - идентификатор заказа.
 
