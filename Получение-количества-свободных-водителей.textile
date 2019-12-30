@@ -18,4 +18,4 @@ h2. Ответ
 
 h3. Reply
 
-|freeDrivers|number|mandatory|Количество свободных (доступных) водителей в рамках тарифа|
+|freeDrivers|number|mandatory|Количество свободных водителей в рамках тарифа|
