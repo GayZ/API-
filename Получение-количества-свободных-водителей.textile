@@ -1,11 +1,13 @@
 h2. Запрос
 
 *Метод*: GET
-*URI*: /api/client/mobile/1.0/drivers/free
+*URI*: /api/client/mobile/2.0/drivers/free
+*Content-Type*: application/json; charset=utf-8
+*Body*: object Params
 
-h3. Примечание
+h3. object Params
 
-Важно наличие заголовка @X-Hive-GPS-Position@ в запросе для точного определения службы такси, обслуживающей регион клиента.
+|tariff|number|mandatory|Идентификатор тарифа|
 
 ----
 
@@ -14,9 +16,6 @@ h2. Ответ
 *Content-Type*: application/json; charset=utf-8
 *Body*: object Reply.
 
-Список будет непустым только при наличии заголовка @X-Hive-GPS-Position@ в запросе.
-
-
 h3. Reply
 
-|freeDrivers|number|mandatory|Количество свободных(доступных) водителей в ценовой зоне|
+|freeDrivers|number|mandatory|Количество свободных (доступных) водителей в рамках тарифа|
