@@ -5,7 +5,7 @@
 h2. Запрос
 
 *Метод*: GET
-*URI*: /api/client/mobile/2.4/orders/{id}
+*URI*: /api/client/mobile/2.5/orders/{id}
 
 где {id} - идентификатор заказа.
 
@@ -31,7 +31,8 @@ h3. OrderInfo
 |executionTime|string [[Duration|Форматы-даты-и-времени#duration]]|false|Продолжительность поездки (только для статуса 4)|
 |usedBonuses|number|false|Количество бонусов для использования в качестве оплаты|
 |paymentMethod|[[object PaymentMethod|Способы-оплаты#object-paymentmethod]]|false|Способ оплаты|
-|costFixAllowed|boolean|true|Разрешена ли фиксация стоимости заказа|
+|costChangeAllowed|boolean|true|Разрешено ли изменение стоимости заказа|
+|costChangeStep|number|false|Шаг изменения стоимости (связан с costChangeAllowed)|
 |isComing|boolean|false|Уведомил ли клиент о том, что выходит|
 
 Статусы:
