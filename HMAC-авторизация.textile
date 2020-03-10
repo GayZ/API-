@@ -127,64 +127,49 @@ h3. Пример на Python
 В данном разделе приведен пример формирования заголовков *Date* и *Authentication* с использованием языка программирования Python. 
 
 ```python
+from base64 import standard_b64decode, standard_b64encode
 from datetime import datetime
-import random
-import hmac
-import hashlib
-import base64
+from hashlib import sha256
+from hmac import new
 
-MAXINT = 2**32
-WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+MONTHNAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+              "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+DAYNAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
 
-def now_rfc_1123():
-
-    date = datetime.utcnow()
-    weekday = WEEKDAYS[date.weekday()]
-    month = MONTHS[date.month - 1]
-    return "%s, %02d %s %04d %02d:%02d:%02d GMT" % \
-           (weekday, date.day, month, date.year, 
-            date.hour, date.minute, date.second)
+def dt_to_rfc_1123(dt: datetime) -> str:
+    weekday = DAYNAMES[dt.weekday()]
+    month = MONTHNAMES[dt.month - 1]
+    return dt.strftime('{}, %d {} %Y %H:%M:%S GMT'.format(weekday, month))
 
 
 class NaiveHmacSigner:
+    def __init__(self, id_, key: str):
+        self._identity = str(id_)
+        self._secret = standard_b64decode(key)
 
-    def __init__(self, permanent_id, key):
+    def new_signature(self, method: str, path: str) -> dict:
+        now = datetime.utcnow()
+        nonce = int(now.timestamp())
+        date = dt_to_rfc_1123(now)
 
-        self.__id = str(permanent_id)
-        self.__key = base64.standard_b64decode(key)
+        data = '{}{}{}{}'.format(
+            method, path, date, nonce
+        ).encode()
 
-    def sign(self, *args):
-
-        line = ''
-        for entry in args:
-            line = line + entry
-
-        signature_bytes = \
-            hmac.new(
-                key=self.__key, 
-                msg=line.encode('utf-8'), 
-                digestmod=hashlib.sha256).digest()
-        return base64.standard_b64encode(signature_bytes).decode()
-
-    def new_signature(self, method, uri):
-
-        rand_value = str(random.randint(0, MAXINT))
-        date_value = now_rfc_1123()
-        auth_value = "hmac %s:%s:%s" % \
-                     (self.__id, rand_value, 
-                      self.sign(method.upper(), uri, date_value, rand_value))
+        digest = standard_b64encode(
+            new(self._secret, data, sha256).digest()
+        ).decode()
 
         return {
-            u'Date': date_value,
-            u'Authentication': auth_value
+            'Authentication': 'hmac {}:{}:{}'.format(self._identity, nonce, digest),
+            'Date': date,
         }
 
 
-c = NaiveHmacSigner(12312313, 'beKXDqRvkrbz+aQpEgn41SSh+9qtLAsb0r2cbcQ24cM=')
-print(c.new_signature('GET', '/api/client/mobile/1.0/history'))
+if __name__ == '__main__':
+    signer = NaiveHmacSigner(12312313, 'beKXDqRvkrbz+aQpEgn41SSh+9qtLAsb0r2cbcQ24cM=')
+    print(signer.new_signature('GET', '/api/client/mobile/1.0/history'))
 
 ```
 
